@@ -1,5 +1,5 @@
 /**
- * Created by Jacky.gao on 2016/6/28.
+ * Created by Jacky.gao on 2016/6/28
  */
 module.exports={
     entry:{
@@ -9,6 +9,7 @@ module.exports={
         path:'./bin',
         filename:'[name].bundle.js'
     },
+
     module:{
         loaders:[
             {
