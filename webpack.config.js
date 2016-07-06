@@ -9,7 +9,6 @@ module.exports={
         path:'./bin',
         filename:'[name].bundle.js'
     },
-
     module:{
         loaders:[
             {
