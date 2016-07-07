@@ -11,8 +11,8 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "events": "^1.1.1",
-    "flowchart.js": "^1.6.3",
-    "jquery": "^2.1.0"
+    "jquery": "^2.1.0",
+    "raphael": "^2.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
