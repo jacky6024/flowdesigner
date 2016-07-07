@@ -68,16 +68,23 @@ export default class Context{
     }
     endSelect(){
         this.selectionRects.attr("stroke", '#FF9800');
-        this.selectionPaths.attr({"stroke":'#FF9800','stroke-dasharray':'20'});
+        this.selectionPaths.attr({"stroke":'#999','stroke-dasharray':'20'});
+        let firstSelectFigure=null;
         this.selectionFigures.forEach((figure,index)=>{
+            if(!firstSelectFigure){
+                firstSelectFigure=figure;
+            }
             if(figure instanceof Connection){
                 figure.select();
             }
         });
+        if(firstSelectFigure){
+            event.eventEmitter.emit(event.OBJECT_SELECTED,firstSelectFigure);
+        }
     }
     resetSelection(){
         this.selectionRects.attr("stroke", '#fff');
-        this.selectionPaths.attr({"stroke":'#000','stroke-dasharray':'none'});
+        this.selectionPaths.attr({"stroke":'#999','stroke-dasharray':'none'});
         this.selectionRects=this.paper.set();
         this.selectionPaths=this.paper.set();
         this.selectionFigures.forEach((figure,index)=>{
@@ -86,6 +93,7 @@ export default class Context{
             }
         });
         this.selectionFigures.splice(0,this.selectionFigures.length);
+        event.eventEmitter.emit(event.CANVAS_SELECTED);
     }
     registerFigure(figure){
         const name=figure.getName();

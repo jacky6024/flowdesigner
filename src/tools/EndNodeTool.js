@@ -10,7 +10,7 @@ export default class EndNodeTool extends Tool{
     getIcon(){
         return `<i class="iconfont" style="color:#737383">&#xe603;</i>`
     }
-    newFigure(pos){
-        return new EndNodeFigure(this.context,pos);
+    newFigure(){
+        return new EndNodeFigure();
     }
 }

@@ -26,7 +26,12 @@ export default class Canvas{
                 return;
             }
             const x=e.offsetX,y=e.offsetY;
-            currentTool.newFigure({x,y});
+            const newFigure=currentTool.newFigure();
+            if(newFigure){
+                newFigure._tool=currentTool;
+                newFigure._initConfigs(currentTool.getConfigs())
+                newFigure._createFigure(context,{x,y});
+            }
         });
 
         this.canvas.mousemove(function (e) {

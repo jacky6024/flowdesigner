@@ -82,6 +82,7 @@ export default class DragPoint{
                 }
             });
             _this.path.attr('path',newPathInfo);
+            _this.connection._buildText();
         };
         var dragStart = function() {
             this.ox=this.attr('x');

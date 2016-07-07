@@ -13,28 +13,18 @@ export default class Connection{
         this.endX=pos.endX;
         this.endY=pos.endY;
         this.selected=false;
-        this.type='curve';
+        this.type='line';
         this.init();
     }
     init(){
         this.path=this.context.paper.path(this.buildPathInfo());
-        this.path.attr({'stroke-width':'2px','stroke':'#000',"arrow-end": "block-wide-long"});
-        this.path.click(function () {
-            if(this.selected){
-                this.path.attr({'stroke':'#000'});
-                this.selected=false;
-            }else{
-                this.path.attr({'stroke':'red'});
-                this.selected=true;
-            }
-        }.bind(this));
+        this.path.attr({'stroke-width':'2px','stroke':'#999',"arrow-end": "block-wide-long"});
         this.path.toBack();
     }
 
     select(){
         this.dragController=new DragController(this);
     }
-
     unSelect(){
         if(this.dragController){
             this.dragController.remove();
@@ -43,6 +33,7 @@ export default class Connection{
 
     updatePath(){
         this.path.attr('path',this.buildPathInfo());
+        this._buildText();
     }
     endPath(endFigure){
         this.to=endFigure;
@@ -212,5 +203,29 @@ export default class Connection{
             pathInfo=line1StartPoint+' L'+x1+' '+(y1+dy/2)+' L'+(x1+dx)+' '+(y1+dy/2)+' L'+x2+' '+y2;
         }
         return pathInfo;
+    }
+
+    _buildText(){
+        if(!this.name){
+            return;
+        }
+        if(this.text){
+            this.text.remove();
+        }
+        let pos;
+        const pathInfo=this.path.attr('path');
+        if(pathInfo.length===2){
+            const start=pathInfo[0],end=pathInfo[1];
+            pos={x:start[1]+(end[1]-start[1])/2,y:start[2]+(end[2]-start[2])/2};
+        }else{
+            const targetPointIndex=Math.round(pathInfo.length/2)-1;
+            const point=pathInfo[targetPointIndex];
+            pos={x:point[1],y:point[2]};
+        }
+        this.text=this.context.paper.text(pos.x+10,pos.y+10,this.name);
+        this.text.attr({'font-size':'14pt','fill':'#2196F3'});
+        this.text.mousedown(function(e){
+           e.preventDefault();
+        });
     }
 }

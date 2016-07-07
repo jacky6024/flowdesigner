@@ -5,12 +5,20 @@ import Connection from './Connection.js';
 import SelectTool from './tools/SelectTool.js';
 import ConnectionTool from './tools/ConnectionTool.js';
 export default class Figure{
-    constructor(context,pos){
+    constructor(config={}){
         this.fromConnections=[];
         this.toConnections=[];
-        this.context=context;
-        this.paper=context.paper;
-        this._createFigure(pos);
+    }
+    _initConfigs(config){
+        this.in=config.in;
+        if(!this.in && this.in!==0){
+            this.in=-1;//-1 is unlimited
+        }
+        this.out=config.out;
+        if(!this.out && this.out!==0){
+            this.out=-1;
+        }
+        this.single=config.single;//Whether the current instance can have more then one
     }
     getSvgIcon(){
         throw 'Unsupport this method.';
@@ -18,12 +26,25 @@ export default class Figure{
     getText(){
         throw 'Unsupport this method.';
     }
-    _createFigure(pos){
+    _createFigure(context,pos){
+        if(this.single){
+            const text=this.getText();
+            let exist=false;
+            context.allFigures.forEach((figure,index)=>{
+                if(text===figure.getText()){
+                    exist=true;
+                    return false;
+                }
+            });
+            if(exist)return null;
+        }
+        this.context=context;
+        this.paper=context.paper;
         const w=50,h=80;
+        pos={x:pos.x-w/2,y:pos.y-h/2+20};
         this.rect=this.paper.rect(pos.x,pos.y,w,h);
         this.rect.attr({'fill':'#fff','stroke':'#fff','stroke-dasharray':'--'});
         this.context.allFigures.push(this);
-
         this.svgIconPath=this.getSvgIcon();
         this.icon=this.paper.image(this.svgIconPath,pos.x,pos.y,50,50);
 
@@ -31,6 +52,9 @@ export default class Figure{
         const textX=pos.x+w/2,textY=pos.y+h-16;
         this.text=this.paper.text(textX,textY,this.textContent);
         this.text.attr({'font-size':'16pt'});
+        this.text.mousedown(function(e){
+            e.preventDefault();
+        });
         this._initFigure();
     }
     _initFigure(){
@@ -83,6 +107,12 @@ export default class Figure{
             var y=e.offsetY;
             var connection=context.currentConnection;
             if(connection){
+                if(_this.in===0){
+                    return;
+                }
+                if(_this.in!==-1 && _this.toConnections.length>=_this.in){
+                    return;
+                }
                 connection.endX=x;
                 connection.endY=y;
                 if(connection.from!==_this){
@@ -90,7 +120,13 @@ export default class Figure{
                     connection.endPath(_this);
                     context.currentConnection=null;
                 }
-            }else{                
+            }else{
+                if(_this.out===0){
+                    return;
+                }
+                if(_this.out!==-1 && _this.fromConnections.length>=_this.out){
+                    return;
+                }
                 connection=new Connection(_this,{endX:x,endY:y});
                 context.currentConnection=connection;
                 fromConnections.push(connection);
@@ -134,6 +170,7 @@ export default class Figure{
             if(!currentTool || !(currentTool instanceof SelectTool)){
                 return;
             }
+            dx-=dx%10,dy-=dy%10;
             var selectionFigures=context.selectionFigures;
             var rect=_this.rect,icon=_this.icon;
             let x=rect.ox+dx,y=rect.oy+dy;
@@ -212,11 +249,12 @@ export default class Figure{
     }
     
     _moveRect(dx,dy){
+        let x=this.rect.ox+dx,y=this.rect.oy+dy;
         this.rect.attr({
-            x: this.rect.ox+dx,
-            y: this.rect.oy+dy
+            x,y
         });
     }
+
 
     _moveAndResizeTextAndIcon(){
         var rectWidth=this.rect.attr('width'),rectHeight=this.rect.attr('height');

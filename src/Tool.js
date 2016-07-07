@@ -11,7 +11,20 @@ export default class Tool{
     getIcon(){
         throw 'Unsupport this method.';
     }
-    newFigure(pos){
+    newFigure(){
         throw 'Unsupport this method.';
     }
+    getConfigs(){
+        return {};
+    }
+    getPropertyContainer(){
+        return '<div/>';
+    }
+    getInConnectionPropertyContainer() {
+        return '<div/>';
+    }
+    getOutConnectionPropertyContainer(){
+        return '<div/>';
+    }
+
 }
