@@ -22,6 +22,14 @@ export default class Connection{
         this.path.toBack();
     }
 
+    remove(){
+        const toConns=this.to.toConnections,fromConns=this.from.fromConnections;
+        const toIndex=toConns.indexOf(this),fromIndex=fromConns.indexOf(this);
+        toConns.splice(toIndex,1);
+        fromConns.splice(fromIndex,1);
+        this.path.remove();
+    }
+
     select(){
         this.dragController=new DragController(this);
     }
@@ -52,22 +60,23 @@ export default class Connection{
     _buildStraightLinePathInfo(){
         const fromRect=this.from.rect;
         let x1=fromRect.attr('x'),y1=fromRect.attr('y'),w1=fromRect.attr('width'),h1=fromRect.attr('height');
-        x1+=w1/2,y1+=h1/2;
+        x1+=w1/2,y1+=h1/2-10;
         let x2=this.endX,y2=this.endY,w2=0,h2=0;
         if(this.to){
             const toRect=this.to.rect;
             x2=toRect.attr('x'),y2=toRect.attr('y'),w2=toRect.attr('width'),h2=toRect.attr('height');
-            x2+=w2/2,y2+=h2/2;
+            x2+=w2/2,y2+=h2/2-10;
         }
         let pathInfo=null;
         if(this.path){
             pathInfo=this.path.attr('path');
             if(pathInfo && pathInfo.length===2)pathInfo=null;
         }
-        let path=path='M'+x1+' '+y1+' L'+x2+' '+y2;
+        let path=[['M',x1,y1],['L',x2,y2]];//'M'+x1+' '+y1+' L'+x2+' '+y2;
         if(pathInfo){
             let firstLineEnd=pathInfo[1];
-            path='M'+x1+' '+y1+' L'+firstLineEnd[1]+' '+firstLineEnd[2];
+            path=[['M',x1,y1]];
+            path.push(firstLineEnd);
         }
         let dot=this._buildFromFigureIntersetion(path);
         if(dot){
@@ -76,23 +85,14 @@ export default class Connection{
         if(this.to){
             if(pathInfo){
                 let lastLineStart=pathInfo[pathInfo.length-2];
-                let lastLineEnd=pathInfo[pathInfo.length-1];
-                path='M'+lastLineStart[1]+' '+lastLineStart[2]+' L'+x2+' '+y2;
+                path=[];
+                path.push(lastLineStart);
+                path.push(['L',x2,y2]);
             }
             dot=this._buildToFigureIntersetion(path);
             if(dot){
                 x2=dot.x,y2=dot.y;
             }
-        }
-        if(x1<x2){
-            x2-=10;
-        }else{
-            x2+=10;
-        }
-        if(y1<y2){
-            y2-=10;
-        }else{
-            y2+=10;
         }
         if(pathInfo){
             let pathSegmentLength=pathInfo.length;
@@ -119,12 +119,16 @@ export default class Connection{
         if(c){
             const fromRect=this.from.rect;
             let x1=fromRect.attr('x'),y1=fromRect.attr('y'),w1=fromRect.attr('width'),h1=fromRect.attr('height');
-            x1+=w1/2,y1+=h1/2;
-            path='M'+x1+' '+y1+ ' L'+path.x+' '+path.y;
+            x1+=w1/2,y1+=h1/2-10;
+            let x=path.x,y=path.y;
+            path=[];
+            path.push(['M',x1,y1]);
+            path.push(['L',x,y]);
         }
         const fromFigurePathInfo=this.from.getPathInfo();
         let dot=Raphael.pathIntersection(fromFigurePathInfo,path);
         if(dot.length>0){
+            let p={x:path[1][1],y:path[1][2]};
             return {x:dot[0].x,y:dot[0].y};
         }
         return null;
@@ -133,15 +137,52 @@ export default class Connection{
         if(c){
             const toRect=this.to.rect;
             let x2=toRect.attr('x'),y2=toRect.attr('y'),w2=toRect.attr('width'),h2=toRect.attr('height');
-            x2+=w2/2,y2+=h2/2;
-            path='M'+path.x+' '+path.y+' L'+x2+' '+y2;
+            x2+=w2/2,y2+=h2/2-10;
+            let x=path.x,y=path.y;
+            path=[];
+            path.push(['M',x,y]);
+            path.push(['L',x2,y2]);
         }
         const toFigurePathInfo=this.to.getPathInfo();
         let dot=Raphael.pathIntersection(toFigurePathInfo,path);
         if(dot.length>0){
+            let p={x:path[0][1],y:path[0][2]};
+            this._buildIntersectionDot(p,dot);
             return {x:dot[0].x,y:dot[0].y};
         }
         return null;
+    }
+
+    _buildIntersectionDot(p,dot){
+        const d=dot[0];
+        const mpx=Math.round(p.x),mdx=Math.round(d.x),mpy=Math.round(p.y),mdy=Math.round(d.y);
+        if(mpx===mdx){
+            if(mpy===mdy){
+                //do nothing...
+            }else if(mpy>mdy){
+                d.y+=10;
+            }else if(mpy<mdy){
+                d.y-=10;
+            }
+        }else if(mpx>mdx){
+            d.x+=10;
+            if(mpy===mdy){
+                //do nothing...
+            }else if(mpy>mdy){
+                d.y+=10;
+            }else if(mpy<mdy){
+                d.y-=10;
+            }
+        }else if(mpx<mdx){
+            d.x-=10;
+            if(mpy===mdy){
+                //do nothing...
+            }else if(mpy>mdy){
+                d.y+=10;
+            }else if(mpy<mdy){
+                d.y-=10;
+            }
+        }
     }
 
     _buildCurveLinePathInfo(){

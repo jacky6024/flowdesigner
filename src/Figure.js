@@ -57,6 +57,36 @@ export default class Figure{
         });
         this._initFigure();
     }
+
+    moveTo(centerX,centerY){
+        const w=this.rect.attr('width'),h=this.rect.attr('height');
+        let x,y;
+        if(centerX===-1){
+            x=this.rect.attr('x');
+            y=centerY-h/2;
+        }
+        if(centerY===-1){
+            y=this.rect.attr('y');
+            x=centerX-w/2;
+        }
+        this.rect.attr({x,y});
+        const textX=x+w/2,textY=y+h-16;
+        this.text.attr({x:textX,y:textY});
+        const iconX=x-w/2,iconY=y-h/2+20,iconW=this.icon.attr('width'),iconH=this.icon.attr('height');
+        this.icon.attr({x:iconX+iconW/2,y:iconY+iconH/2});
+        this._resetConnections();
+    }
+
+    changeSize(w,h){
+        const x=this.rect.attr('x'),y=this.rect.attr('y');
+        this.rect.attr({width:w,height:h});
+        const textX=x+w/2,textY=y+h-16;
+        this.text.attr({x:textX,y:textY});
+        const iconW=w,iconH=h-30;
+        this.icon.attr({width:iconW,height:iconH});
+        this._resetConnections();
+    }
+
     _initFigure(){
         var context=this.context;
         var fromConnections=this.fromConnections;
@@ -95,6 +125,7 @@ export default class Figure{
                 this.attr('cursor', 'move');
             }
         };
+
         var mouseDown=function (e) {
             if(this.dragging){
                 return;
@@ -153,8 +184,6 @@ export default class Figure{
             if(!currentTool || !(currentTool instanceof SelectTool)){
                 return;
             }
-            /* rect.ox = this.attr('x');
-            rect.oy = this.attr('y');*/
             context.selectionFigures.forEach((figure,index)=>{
                 if(!(figure instanceof Connection)){
                     figure._recordRectPosition();
@@ -170,7 +199,9 @@ export default class Figure{
             if(!currentTool || !(currentTool instanceof SelectTool)){
                 return;
             }
-            dx-=dx%10,dy-=dy%10;
+            if(_this.context.snapto){
+                dx-=dx%10,dy-=dy%10;
+            }
             var selectionFigures=context.selectionFigures;
             var rect=_this.rect,icon=_this.icon;
             let x=rect.ox+dx,y=rect.oy+dy;
@@ -243,6 +274,18 @@ export default class Figure{
         this.icon.drag(dragMove, dragStart, dragEnd);
     }
 
+    remove(){
+        this.toConnections.forEach((conn,index)=>{
+            conn.remove();
+        });
+        this.fromConnections.forEach((conn,index)=>{
+            conn.remove();
+        });
+        this.text.remove();
+        this.icon.remove();
+        this.rect.remove();
+    }
+
     _recordRectPosition(){
         this.rect.ox = this.rect.attr('x');
         this.rect.oy = this.rect.attr('y');
@@ -254,7 +297,6 @@ export default class Figure{
             x,y
         });
     }
-
 
     _moveAndResizeTextAndIcon(){
         var rectWidth=this.rect.attr('width'),rectHeight=this.rect.attr('height');

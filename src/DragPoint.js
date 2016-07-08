@@ -33,6 +33,9 @@ export default class DragPoint{
             this.attr('cursor', 'default');
         });
         var dragMove = function(dx, dy) {
+            if(_this.context.snapto){
+                dx-=dx%10,dy-=dy%10;
+            }
             let x=this.ox+dx,y=this.oy+dy;
             if(x<1 || y<1){
                 return;
@@ -44,26 +47,24 @@ export default class DragPoint{
             let pi=_this.path.attr("path");
             let L=pi.length,dot,p,p1;
 
-            if(targetIndex===1 || targetIndex===0){
+            let segmentCount=(pathInfo.length-1)*2-1;
+            if(segmentIndex===0 || segmentIndex===1){
                 p1=pi[1];
                 dot=_this.connection._buildFromFigureIntersetion({x:p1[1],y:p1[2]},true);
                 p=pathInfo[0];
-            }else if(targetIndex===L-2){
+                if(pathInfo.length===2){
+                    let endDot=_this.connection._buildToFigureIntersetion({x,y},true);
+                    if(endDot){
+                        let pp=pathInfo[pathInfo.length-1];
+                        pp[1]=endDot.x,pp[2]=endDot.y;
+                    }
+                }
+            }else if(segmentCount===segmentIndex || (segmentCount===segmentIndex+1) || (segmentCount===segmentIndex+2)){
                 p1=pi[L-2];
-                dot=_this.connection._buildToFigureIntersetion({x:p1[1],y:p1[2]},true);
-                p=pathInfo[L-1];
+                dot=_this.connection._buildToFigureIntersetion({x,y},true);
+                p=pathInfo[pathInfo.length-1];
             }
             if(dot){
-                if(p1[1]<dot.x){
-                    dot.x-=10;
-                }else{
-                    dot.x+=10;
-                }
-                if(p1[2]<dot.y){
-                    dot.y-=10;
-                }else{
-                    dot.y+=10;
-                }
                 p[1]=dot.x,p[2]=dot.y;
             }
             let newPathInfo=[];

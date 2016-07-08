@@ -10,7 +10,6 @@ import Connection from './Connection.js';
 import * as event from './event.js';
 import Figure from './Figure.js';
 
-
 export default class Context{
     constructor(container){
         this.toolsMap=new Map();
@@ -111,6 +110,59 @@ export default class Context{
             if(this.currentConnection){
                 this.currentConnection.path.remove();
             }
+        });
+        event.eventEmitter.on(event.REMOVE_CLICKED,()=>{
+            const selections=[...this.selectionFigures];
+            if(selections===0){
+                return;
+            }
+            this.resetSelection();
+            selections.forEach((select,index)=>{
+                select.remove();
+                let i=this.allFigures.indexOf(select);
+                this.allFigures.splice(i,1);
+            });
+        });
+        event.eventEmitter.on(event.ALIGN_CENTER,()=>{
+            let x=-1,y=-1,w;
+            this.selectionFigures.forEach((select,index)=>{
+                if(select instanceof Connection){
+                    return false;
+                }
+                if(index===0){
+                    x=select.rect.attr('x'),w=select.rect.attr('width');
+                    x+=w/2;
+                }else{
+                    select.moveTo(x,y);
+                }
+            });
+        });
+        event.eventEmitter.on(event.ALIGN_MIDDLE,()=>{
+            let x=-1,y=-1,h;
+            this.selectionFigures.forEach((select,index)=>{
+                if(select instanceof Connection){
+                    return false;
+                }
+                if(index===0){
+                    y=select.rect.attr('y'),h=select.rect.attr('height');
+                    y+=h/2;
+                }else{
+                    select.moveTo(x,y);
+                }
+            });
+        });
+        event.eventEmitter.on(event.UNIFY_SIZE,()=>{
+            let w,h;
+            this.selectionFigures.forEach((select,index)=>{
+                if(select instanceof Connection){
+                    return false;
+                }
+                if(index===0){
+                    w=select.rect.attr('width'),h=select.rect.attr('height');
+                }else{
+                    select.changeSize(w,h);
+                }
+            });
         });
     }
     _initBuiltinFigures(){

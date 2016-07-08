@@ -8,6 +8,6 @@ export default class SelectTool extends Tool{
         return "Select";
     }
     getIcon(){
-        return `<i class="iconfont" style="color:#737383">&#xe601;</i>`
+        return `<i class="iconfont icon-select" style="color:#737383"></i>`
     }
 }

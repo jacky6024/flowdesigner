@@ -8,7 +8,7 @@ export default class StartNodeTool extends Tool{
         return 'Start';
     }
     getIcon(){
-        return `<i class="iconfont" style="color:#737383">&#xe600;</i>`
+        return `<i class="iconfont icon-start" style="color:#737383"></i>`
     }
     newFigure(){
         return new StartNodeFigure();

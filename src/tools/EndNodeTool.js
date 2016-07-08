@@ -8,7 +8,7 @@ export default class EndNodeTool extends Tool{
         return 'End';
     }
     getIcon(){
-        return `<i class="iconfont" style="color:#737383">&#xe603;</i>`
+        return `<i class="iconfont icon-end" style="color:#737383"></i>`
     }
     newFigure(){
         return new EndNodeFigure();
