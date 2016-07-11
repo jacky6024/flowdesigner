@@ -2,8 +2,7 @@
  * Created by Jacky.gao on 2016/6/30.
  */
 export default class Tool{
-    constructor(context){
-        this.context=context;
+    constructor(){
     }
     getName(){
         throw 'Unsupport this method.';
@@ -11,7 +10,7 @@ export default class Tool{
     getIcon(){
         throw 'Unsupport this method.';
     }
-    newFigure(){
+    newNode(){
         throw 'Unsupport this method.';
     }
     getConfigs(){
@@ -20,10 +19,7 @@ export default class Tool{
     getPropertyContainer(){
         return '<div/>';
     }
-    getInConnectionPropertyContainer() {
-        return '<div/>';
-    }
-    getOutConnectionPropertyContainer(){
+    getConnectionPropertyContainer() {
         return '<div/>';
     }
 

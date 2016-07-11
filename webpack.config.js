@@ -3,10 +3,10 @@
  */
 module.exports={
     entry:{
-        designer:'./src/designer.js'
+        test:'./sample/test.js'
     },
     output:{
-        path:'./bin',
+        path:'./sample',
         filename:'[name].bundle.js'
     },
     module:{
@@ -19,7 +19,14 @@ module.exports={
                     presets: ['es2015']
                 }
             },
-            {test: /\.css$/, loader: "style-loader!css-loader"}
+            {
+                test: /\.css$/,
+                loader: "style-loader!css-loader"
+            },
+            {
+                test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
+                loader: 'url-loader?limit=100000&name=[name]-[hash].[ext]'
+            }
         ]
     }
 };

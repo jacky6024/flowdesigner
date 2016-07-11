@@ -7,6 +7,6 @@ export default class ConnectionTool extends Tool{
         return 'Connection';
     }
     getIcon(){
-        return `<i class="iconfont icon-line" style="color:#737383"></i>`;
+        return `<i class="fd fd-line" style="color:#737383"></i>`;
     }
 }

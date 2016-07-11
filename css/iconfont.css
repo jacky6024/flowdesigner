@@ -1,0 +1,24 @@
+
+@font-face {font-family: "fd";
+  src: url('iconfont.eot'); /* IE9*/
+  src: url('iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.fd {
+  font-family:"fd" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fd-delete:before { content: "\e605"; }
+.fd-snapto:before { content: "\e603"; }
+.fd-select:before { content: "\e601"; }
+.fd-align-center:before { content: "\e607"; }
+.fd-align-middle:before { content: "\e608"; }
+.fd-line:before { content: "\e602"; }
+.fd-samesize:before { content: "\e606"; }

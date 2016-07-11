@@ -57,6 +57,14 @@ export default class Connection{
         }
     }
 
+    toJson(){
+        const json = {
+            path: this.buildPathInfo(),
+            text:this.name
+        };
+        return json;
+    }
+
     _buildStraightLinePathInfo(){
         const fromRect=this.from.rect;
         let x1=fromRect.attr('x'),y1=fromRect.attr('y'),w1=fromRect.attr('width'),h1=fromRect.attr('height');
@@ -157,27 +165,21 @@ export default class Connection{
         const d=dot[0];
         const mpx=Math.round(p.x),mdx=Math.round(d.x),mpy=Math.round(p.y),mdy=Math.round(d.y);
         if(mpx===mdx){
-            if(mpy===mdy){
-                //do nothing...
-            }else if(mpy>mdy){
+            if(mpy>mdy){
                 d.y+=10;
             }else if(mpy<mdy){
                 d.y-=10;
             }
         }else if(mpx>mdx){
             d.x+=10;
-            if(mpy===mdy){
-                //do nothing...
-            }else if(mpy>mdy){
+            if(mpy>mdy){
                 d.y+=10;
             }else if(mpy<mdy){
                 d.y-=10;
             }
         }else if(mpx<mdx){
             d.x-=10;
-            if(mpy===mdy){
-                //do nothing...
-            }else if(mpy>mdy){
+            if(mpy>mdy){
                 d.y+=10;
             }else if(mpy<mdy){
                 d.y-=10;

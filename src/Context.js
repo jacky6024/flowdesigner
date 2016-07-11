@@ -4,11 +4,9 @@
 import Raphael from 'raphael';
 import SelectTool from './tools/SelectTool.js';
 import ConnectionTool from './tools/ConnectionTool.js';
-import StartNodeTool from './tools/StartNodeTool.js';
-import EndNodeTool from './tools/EndNodeTool.js';
 import Connection from './Connection.js';
 import * as event from './event.js';
-import Figure from './Figure.js';
+import Node from './Node.js';
 
 export default class Context{
     constructor(container){
@@ -47,7 +45,7 @@ export default class Context{
     getFigureById(id){
         let target;
         this.allFigures.forEach((figure,index)=>{
-            if(figure instanceof Figure){
+            if(figure instanceof Node){
                 if(figure.rect.id===id || figure.icon.id===id || figure.text.id===id){
                     target=figure;
                     return false;
@@ -94,12 +92,12 @@ export default class Context{
         this.selectionFigures.splice(0,this.selectionFigures.length);
         event.eventEmitter.emit(event.CANVAS_SELECTED);
     }
-    registerFigure(figure){
-        const name=figure.getName();
-        if(figure.has(name)){
+    registerTool(tool){
+        const name=tool.getName();
+        if(this.toolsMap.has(name)){
             throw `Figure [${name}] already exist.`;
         }
-        this.toolsMap.set(name,figure);
+        this.toolsMap.set(name,tool);
     }
     _initEvent(){
         event.eventEmitter.on(event.TRIGGER_TOOL,figureName => {
@@ -166,13 +164,11 @@ export default class Context{
         });
     }
     _initBuiltinFigures(){
-        const selectTool=new SelectTool(this),
-            startNodeTool=new StartNodeTool(this),
-            endNodeTool=new EndNodeTool(this),
-            connectionTool=new ConnectionTool(this);
+        const  selectTool=new SelectTool(),
+                connectionTool=new ConnectionTool();
+        selectTool.context=this;
+        connectionTool.context=this;
         this.toolsMap.set(selectTool.getName(),selectTool);
         this.toolsMap.set(connectionTool.getName(),connectionTool);
-        this.toolsMap.set(startNodeTool.getName(),startNodeTool);
-        this.toolsMap.set(endNodeTool.getName(),endNodeTool);
     }
 }

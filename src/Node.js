@@ -4,7 +4,8 @@
 import Connection from './Connection.js';
 import SelectTool from './tools/SelectTool.js';
 import ConnectionTool from './tools/ConnectionTool.js';
-export default class Figure{
+import * as MsgBox from './MsgBox.js';
+export default class Node{
     constructor(config={}){
         this.fromConnections=[];
         this.toConnections=[];
@@ -26,17 +27,55 @@ export default class Figure{
     getText(){
         throw 'Unsupport this method.';
     }
+
+    validate(){
+        return null;
+    }
+
+    initFromJson(json){
+        const {x,y,w,h,name,connections}=json;
+        this.move(x,y,w,h);
+        this.changeSize(w,h);
+        this.text.attr('text',name);
+        this.connectionsJson=connections;
+    }
+
+    toJSON(){
+        return this.nodeToJSON();
+    }
+
+    nodeToJSON(){
+        let json={
+            x:this.rect.attr('x'),
+            y:this.rect.attr('y'),
+            w:this.rect.attr('width'),
+            h:this.rect.attr('height'),
+            name:this.name
+        };
+        const connections=[];
+        this.fromConnections.forEach((conn,index)=>{
+            connections.push(conn.toJson());
+        });
+        json.connections=connections;
+        return json;
+    }
+
     _createFigure(context,pos){
         if(this.single){
             const text=this.getText();
             let exist=false;
             context.allFigures.forEach((figure,index)=>{
-                if(text===figure.getText()){
-                    exist=true;
-                    return false;
+                if(figure instanceof Node){
+                    if(text===figure.getText()){
+                        exist=true;
+                        return false;
+                    }
                 }
             });
-            if(exist)return null;
+            if(exist){
+                MsgBox.alert('当前节点只允许创建一个.');
+                return null;
+            }
         }
         this.context=context;
         this.paper=context.paper;
@@ -48,9 +87,9 @@ export default class Figure{
         this.svgIconPath=this.getSvgIcon();
         this.icon=this.paper.image(this.svgIconPath,pos.x,pos.y,50,50);
 
-        this.textContent=this.getText();
+        this.name=this.getText();
         const textX=pos.x+w/2,textY=pos.y+h-16;
-        this.text=this.paper.text(textX,textY,this.textContent);
+        this.text=this.paper.text(textX,textY,this.name);
         this.text.attr({'font-size':'16pt'});
         this.text.mousedown(function(e){
             e.preventDefault();
@@ -69,6 +108,10 @@ export default class Figure{
             y=this.rect.attr('y');
             x=centerX-w/2;
         }
+        this.move(x,y,w,h);
+    }
+
+    move(x,y,w,h){
         this.rect.attr({x,y});
         const textX=x+w/2,textY=y+h-16;
         this.text.attr({x:textX,y:textY});

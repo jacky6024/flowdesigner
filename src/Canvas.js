@@ -26,7 +26,7 @@ export default class Canvas{
                 return;
             }
             const x=e.offsetX,y=e.offsetY;
-            const newFigure=currentTool.newFigure();
+            const newFigure=currentTool.newNode();
             if(newFigure){
                 newFigure._tool=currentTool;
                 newFigure._initConfigs(currentTool.getConfigs())
