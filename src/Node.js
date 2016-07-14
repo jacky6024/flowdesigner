@@ -24,9 +24,6 @@ export default class Node{
     getSvgIcon(){
         throw 'Unsupport this method.';
     }
-    getText(){
-        throw 'Unsupport this method.';
-    }
 
     validate(){
         return null;
@@ -37,7 +34,16 @@ export default class Node{
         this.move(x,y,w,h);
         this.changeSize(w,h);
         this.text.attr('text',name);
+        this.dx=json.dx;
+        this.dy=json.dy;
+        if(json.uuid){
+            this.uuid=json.uuid;
+        }
         this.connectionsJson=connections;
+    }
+
+    buildConnections(){
+        
     }
 
     toJSON(){
@@ -50,33 +56,34 @@ export default class Node{
             y:this.rect.attr('y'),
             w:this.rect.attr('width'),
             h:this.rect.attr('height'),
-            name:this.name
+            name:this.name,
+            uuid:this.uuid,
+            dx:this.dx,
+            dy:this.dy
         };
         const connections=[];
         this.fromConnections.forEach((conn,index)=>{
-            connections.push(conn.toJson());
+            connections.push(conn.toJSON());
         });
         json.connections=connections;
         return json;
     }
 
-    _createFigure(context,pos){
+    _createFigure(context,pos,name){
         if(this.single){
-            const text=this.getText();
             let exist=false;
-            context.allFigures.forEach((figure,index)=>{
-                if(figure instanceof Node){
-                    if(text===figure.getText()){
-                        exist=true;
-                        return false;
-                    }
+            for(let figure of context.allFigures){
+                if(figure.constructor.name===this.constructor.name){
+                    exist=true;
+                    break;
                 }
-            });
+            }
             if(exist){
                 MsgBox.alert('当前节点只允许创建一个.');
                 return null;
             }
         }
+        this.uuid=context.nextUUID();
         this.context=context;
         this.paper=context.paper;
         const w=50,h=80;
@@ -86,8 +93,7 @@ export default class Node{
         this.context.allFigures.push(this);
         this.svgIconPath=this.getSvgIcon();
         this.icon=this.paper.image(this.svgIconPath,pos.x,pos.y,50,50);
-
-        this.name=this.getText();
+        this.name=name;
         const textX=pos.x+w/2,textY=pos.y+h-16;
         this.text=this.paper.text(textX,textY,this.name);
         this.text.attr({'font-size':'16pt'});
@@ -174,7 +180,28 @@ export default class Node{
                 return;
             }
             const currentTool=context.currentTool;
-            if(!currentTool || !(currentTool instanceof ConnectionTool)){
+            if(!currentTool){
+                return;
+            }
+            if(currentTool instanceof SelectTool){
+                if(context.selectionFigures.length===0){
+                    context.selectFigure(_this);
+                }else{
+                    let contain=false;
+                    for(let figure of context.selectionFigures){
+                        if(figure===_this){
+                            contain=true;
+                            break;
+                        }
+                    }
+                    if(!contain){
+                        context.resetSelection();
+                        context.selectFigure(_this);
+                    }
+                }
+            }
+
+            if(!(currentTool instanceof ConnectionTool)){
                 return;
             }
             var x=e.offsetX;
@@ -182,44 +209,50 @@ export default class Node{
             var connection=context.currentConnection;
             if(connection){
                 if(_this.in===0){
+                    MsgBox.alert(`当前节点不允许有进入的连线.`);
                     return;
                 }
                 if(_this.in!==-1 && _this.toConnections.length>=_this.in){
+                    MsgBox.alert(`当前节点进入的连线最多只能有${_this.in}条.`);
                     return;
                 }
                 connection.endX=x;
                 connection.endY=y;
                 if(connection.from!==_this){
-                    toConnections.push(connection);
                     connection.endPath(_this);
                     context.currentConnection=null;
+                    const fromUUID=connection.from.uuid,toUUID=_this.uuid,uuid=connection.uuid;
+                    context.addRedoUndo({
+                        redo:function () {
+                            const from=context.getNodeByUUID(fromUUID),to=context.getNodeByUUID(toUUID);
+                            connection=new Connection(from,{endX:from.rect.attr('x'),endY:from.rect.attr('y')});
+                            connection.uuid=uuid;
+                            connection.endPath(to);
+                        },
+                        undo:function () {
+                            _this.context.removeFigureByUUID(uuid);
+                        }
+                    })
+                }else{
+                    MsgBox.alert('连线的起始节点不能为同一节点.');
                 }
             }else{
                 if(_this.out===0){
+                    MsgBox.alert('当前节点不允许有出去的连线.');
                     return;
                 }
                 if(_this.out!==-1 && _this.fromConnections.length>=_this.out){
+                    MsgBox.alert(`当前节点出去的连线最多只能有${_this.out}条.`);
                     return;
                 }
                 connection=new Connection(_this,{endX:x,endY:y});
                 context.currentConnection=connection;
-                fromConnections.push(connection);
             }
-        };
-        var mouseClick=function (e) {
-            const currentTool=context.currentTool;
-            if(!currentTool || !(currentTool instanceof SelectTool)){
-                return;
-            }
-            context.selectFigure(_this);
         };
         this.rect.mouseover(mouseOver);
         this.rect.mousedown(mouseDown);
-        this.rect.click(mouseClick);
-
         this.icon.mouseover(mouseOver);
         this.icon.mousedown(mouseDown);
-        this.icon.click(mouseClick);
 
         var dragStart = function() {
             var rect=_this.rect;
@@ -227,7 +260,19 @@ export default class Node{
             if(!currentTool || !(currentTool instanceof SelectTool)){
                 return;
             }
-            context.selectionFigures.forEach((figure,index)=>{
+            let contain=false;
+            const selectionFigures=context.selectionFigures;
+            for(let figure of selectionFigures){
+                if(figure===_this){
+                    contain=true;
+                    break;
+                }
+            }
+            if(!contain){
+                context.resetSelection();
+                return;
+            }
+            selectionFigures.forEach((figure,index)=>{
                 if(!(figure instanceof Connection)){
                     figure._recordRectPosition();
                 }
@@ -245,8 +290,8 @@ export default class Node{
             if(_this.context.snapto){
                 dx-=dx%10,dy-=dy%10;
             }
-            var selectionFigures=context.selectionFigures;
-            var rect=_this.rect,icon=_this.icon;
+            const selectionFigures=context.selectionFigures;
+            const rect=_this.rect,icon=_this.icon;
             let x=rect.ox+dx,y=rect.oy+dy;
             if(x<1 || y<1){
                 return;
@@ -312,6 +357,49 @@ export default class Node{
         };
         var dragEnd = function() {
             _this.rect.dragging = false;
+            const selectionUUIDs=[],xyMap=new Map(),oldXYMap=new Map(),ow=_this.rect.ow,oh=_this.rect.oh,w=_this.rect.attr('width'),h=_this.rect.attr('height'),nodeUUID=_this.uuid;
+            for(const figure of context.selectionFigures){
+                if(!(figure instanceof Connection)){
+                    selectionUUIDs.push(figure.uuid);
+                    let ox=figure.rect.ox,oy=figure.rect.oy;
+                    ox=ox ? ox : 0,oy=oy ? oy : 0;
+                    const x=figure.rect.attr('x'),y=figure.rect.attr('y');
+                    xyMap.set(figure.uuid,{x,y});
+                    oldXYMap.set(figure.uuid,{x:ox,y:oy});
+                }
+            }
+            _this.context.addRedoUndo({
+                redo:function () {
+                    for(const uuid of selectionUUIDs){
+                        const node=context.getNodeByUUID(uuid);
+                        const pos=xyMap.get(uuid);
+                        node.rect.attr({x:pos.x,y:pos.y});
+                        if(uuid===nodeUUID){
+                            node.rect.attr({width:w,height:h});
+                        }
+                    }
+                    for(const uuid of selectionUUIDs){
+                        const node=context.getNodeByUUID(uuid);
+                        node._moveAndResizeTextAndIcon();
+                        node._resetConnections();
+                    }
+                },
+                undo:function () {
+                    for(const uuid of selectionUUIDs){
+                        const node=context.getNodeByUUID(uuid);
+                        const pos=oldXYMap.get(uuid);
+                        node.rect.attr({x:pos.x,y:pos.y});
+                        if(uuid===nodeUUID){
+                            node.rect.attr({width:ow,height:oh});
+                        }
+                    }
+                    for(const uuid of selectionUUIDs){
+                        const node=context.getNodeByUUID(uuid);
+                        node._moveAndResizeTextAndIcon();
+                        node._resetConnections();
+                    }
+                }
+            })
         };
         this.rect.drag(dragMove, dragStart, dragEnd);
         this.icon.drag(dragMove, dragStart, dragEnd);
@@ -333,12 +421,15 @@ export default class Node{
         this.rect.ox = this.rect.attr('x');
         this.rect.oy = this.rect.attr('y');
     }
-    
+
     _moveRect(dx,dy){
-        let x=this.rect.ox+dx,y=this.rect.oy+dy;
-        this.rect.attr({
-            x,y
-        });
+        let x,y;
+        if(this.rect.ox && this.rect.ox!==0){
+            x=this.rect.ox+dx,y=this.rect.oy+dy;
+        }else{
+            x=this.rect.attr('x')+dx,y=this.rect.attr('x')+dy;
+        }
+        this.rect.attr({x,y});
     }
 
     _moveAndResizeTextAndIcon(){

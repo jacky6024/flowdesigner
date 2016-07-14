@@ -44,16 +44,23 @@ export default class DragEndpoint{
         };
         var dragEnd = function() {
             if(_this.newFrom){
-                if(_this.newFrom!==_this.connection.to){
-                    const oldFromConnections=_this.connection.from.fromConnections;
-                    const index=oldFromConnections.indexOf(_this.connection);
-                    oldFromConnections.splice(index,1);
-                    _this.connection.from=_this.newFrom;
-                    const newFromConnections=_this.newFrom.fromConnections;
-                    newFromConnections.push(_this.connection);
+                if(_this.newFrom!==_this.connection.from){
+                    const newFromNodeUUID=_this.newFrom.uuid,oldFromNodeUUID=_this.connection.from.uuid,connectionUUID=_this.connection.uuid;
+                    _this.connection.changeFromNode(_this.newFrom);
+                    _this.context.addRedoUndo({
+                        redo:function () {
+                            const targetNode=_this.context.getNodeByUUID(newFromNodeUUID);
+                            const conn=_this.context.getNodeByUUID(connectionUUID);
+                            conn.changeFromNode(targetNode);
+                        },
+                        undo:function () {
+                            const targetNode=_this.context.getNodeByUUID(oldFromNodeUUID);
+                            const conn=_this.context.getNodeByUUID(connectionUUID);
+                            conn.changeFromNode(targetNode);
+                        }
+                    })
                 }
             }
-            _this.connection.updatePath();
             _this.controller.remove();
         };
         this.startRect.drag(dragMove,dragStart,dragEnd);
@@ -95,15 +102,22 @@ export default class DragEndpoint{
         var dragEnd = function() {
             if(_this.newTo){
                 if(_this.newTo!==_this.connection.from){
-                    const oldToConnections=_this.connection.to.toConnections;
-                    const index=oldToConnections.indexOf(_this.connection);
-                    oldToConnections.splice(index,1);
-                    _this.connection.to=_this.newTo;
-                    const newToConnections=_this.newTo.toConnections;
-                    newToConnections.push(_this.connection);
+                    const newToNodeUUID=_this.newTo.uuid,oldToNodeUUID=_this.connection.to.uuid,connectionUUID=_this.connection.uuid;
+                    _this.connection.changeToNode(_this.newTo);
+                    _this.context.addRedoUndo({
+                        redo:function () {
+                            const targetNode=_this.context.getNodeByUUID(newToNodeUUID);
+                            const conn=_this.context.getNodeByUUID(connectionUUID);
+                            conn.changeToNode(targetNode);
+                        },
+                        undo:function () {
+                            const targetNode=_this.context.getNodeByUUID(oldToNodeUUID);
+                            const conn=_this.context.getNodeByUUID(connectionUUID);
+                            conn.changeToNode(targetNode);
+                        }
+                    });
                 }
             }
-            _this.connection.updatePath();
             _this.controller.remove();
         };
         this.endRect.drag(dragMove,dragStart,dragEnd);

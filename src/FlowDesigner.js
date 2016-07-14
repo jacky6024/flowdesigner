@@ -5,6 +5,7 @@ import '../css/iconfont.css';
 import '../css/flowdesigner.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import {} from 'bootstrap';
+import {} from './jquery.draggable.js';
 import Canvas from './Canvas.js';
 import Context from './Context.js';
 import * as event from './event.js';
@@ -17,6 +18,8 @@ export default class FlowDesigner{
         const container=$('#'+containerId);
         this.toolbar=$(`<div class="btn-group fd-toolbar" data-toggle="buttons"></div>`);
         container.append(this.toolbar);
+        this.nodeToolbar=$(`<div class="btn-group fd-node-toolbar" data-toggle="buttons"></div>`);
+        container.append(this.nodeToolbar);
 
         this.canvasContainer=$(`<div class="fd-canvas-container"></div>`);
         container.append(this.canvasContainer);
@@ -40,27 +43,31 @@ export default class FlowDesigner{
         const tabContent=$(`<div class="tab-content" style="min-height: 200px;padding:10px"/>`);
         tabContent.append(this.propContainer);
         propertyPanel.append(tabContent);
-        propertyPanel.mousedown(function (e) {
-            this.dragging=true;
-            var event = e || window.event;
-            this.mX = event.clientX;
-            this.mY = event.clientY;
-            const offset=$(this).offset();
-            this.dX = offset.left;
-            this.dY = offset.top;
-        });
-        propertyPanel.mousemove(function (e) {
-            if(!this.dragging){
+        propertyPanel.draggable();
+        this._bindSnapToEvent();
+        this._bindShortcutKey();
+    }
+
+    _bindShortcutKey(){
+        const _this=this;
+        let isCtrl=false;
+        $(document).keydown(function (e) {
+            if(e.which===17){
+                isCtrl=true;
+            }
+            if(!isCtrl){
                 return;
             }
-            const event = e || window.event;
-            const x = event.clientX, y = event.clientY;
-            $(this).css({left:x-this.mX+this.dX,top:y-this.mY+this.dY});
+            if(e.which===90){
+                _this.context.undoManager.undo();
+            }else if(e.which===89){
+                _this.context.undoManager.redo();
+            }
+        }).keyup(function (e) {
+            if(e.which===17){
+                isCtrl=false;
+            }
         });
-        propertyPanel.mouseup(function (e) {
-            this.dragging=false;
-        });
-        this._bindSnapToEvent();
     }
 
     _bindSnapToEvent(){
@@ -87,52 +94,111 @@ export default class FlowDesigner{
     }
 
     _buildTools(){
-        for(let figure of this.context.toolsMap.values()){
-            let tools=$(`
-                <label class="btn btn-default" style="border:none;border-radius:0">
-                    <input type="radio" name="tools" title="${figure.getName()}"> ${figure.getIcon()}
-                </label>
-            `);
-            this.toolbar.append(tools);
-            tools.click(function () {
-                event.eventEmitter.emit(event.TRIGGER_TOOL,figure.getName());
-            });
-        };
+        const context=this.context,_this=this;
+        const selectTool=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0">
+            <i class="fd fd-select" style="color:#737383"></i>
+        </button>`);
+        this.toolbar.append(selectTool);
+        selectTool.click(function (e) {
+            context.cancelConnection();
+            context.currentTool=context.selectTool;
+            _this.nodeToolbar.children('label').removeClass('active');
+        });
+        const connectionTool=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0">
+            <i class="fd fd-line" style="color:#737383"></i>
+        </button>`);
+        this.toolbar.append(connectionTool);
+        connectionTool.click(function (e) {
+            context.cancelConnection();
+            context.currentTool=context.connectionTool;
+            _this.nodeToolbar.children('label').removeClass('active');
+        });
+        const undoTool=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0">
+            <i class="fd fd-undo" style="color:#737383"></i>
+        </button>`);
+        this.toolbar.append(undoTool);
+        undoTool.click(function (e) {
+            context.cancelConnection();
+            context.undoManager.undo();
+            _this.nodeToolbar.children('label').removeClass('active');
+            context.currentTool=context.selectTool;
+        });
+        const redoTool=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0">
+            <i class="fd fd-redo" style="color:#737383"></i>
+        </button>`);
+        this.toolbar.append(redoTool);
+        redoTool.click(function (e) {
+            context.cancelConnection();
+            context.undoManager.redo();
+            _this.nodeToolbar.children('label').removeClass('active');
+            context.currentTool=context.selectTool;
+        });
+
         const snapTool=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0">
             <i class="fd fd-snapto" style="color:#737383"></i>
         </button>`);
         this.toolbar.append(snapTool);
         snapTool.click(function (e) {
+            context.cancelConnection();
             event.eventEmitter.emit(event.SNAPTO_SELECTED);
+            _this.nodeToolbar.children('label').removeClass('active');
+            context.currentTool=context.selectTool;
         });
         const removeTool=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0">
             <i class="fd fd-delete" style="color:#737383"></i>
         </button>`);
         this.toolbar.append(removeTool);
         removeTool.click(function (e) {
+            context.cancelConnection();
             event.eventEmitter.emit(event.REMOVE_CLICKED);
+            _this.nodeToolbar.children('label').removeClass('active');
+            context.currentTool=context.selectTool;
         });
         const alignCenter=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0">
              <i class="fd fd-align-center"></i>
         </button>`);
         this.toolbar.append(alignCenter);
         alignCenter.click(function (e) {
+            context.cancelConnection();
             event.eventEmitter.emit(event.ALIGN_CENTER);
+            _this.nodeToolbar.children('label').removeClass('active');
+            context.currentTool=context.selectTool;
         });
         const alignMiddle=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0">
              <i class="fd fd-align-middle"></i>
         </button>`);
         this.toolbar.append(alignMiddle);
         alignMiddle.click(function (e) {
+            context.cancelConnection();
             event.eventEmitter.emit(event.ALIGN_MIDDLE);
+            _this.nodeToolbar.children('label').removeClass('active');
+            context.currentTool=context.selectTool;
         });
         const sameSize=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0">
              <i class="fd fd-samesize"></i>
         </button>`);
         this.toolbar.append(sameSize);
         sameSize.click(function (e) {
+            context.cancelConnection();
             event.eventEmitter.emit(event.UNIFY_SIZE);
+            _this.nodeToolbar.children('label').removeClass('active');
+            context.currentTool=context.selectTool;
         });
+        this._buildNodeTools();
+    }
+
+    _buildNodeTools(){
+        for(let tool of this.context.toolsMap.values()){
+            let tools=$(`
+                <label class="btn btn-default" style="border:none;border-radius:0">
+                    <input type="radio" name="tools" title="${tool.getName()}"> ${tool.getIcon()}
+                </label>
+            `);
+            this.nodeToolbar.append(tools);
+            tools.click(function () {
+                event.eventEmitter.emit(event.TRIGGER_TOOL,tool.getName());
+            });
+        };
     }
 
     _bindSelectionEvent(){
@@ -145,8 +211,21 @@ export default class FlowDesigner{
                 nameGroup.append(nameText);
                 this.propContainer.append(nameGroup);
                 nameText.change(function(e){
-                    target.name=$(this).val();
+                    const newName=$(this).val(),oldName=target.name,uuid=target.uuid;
+                    target.name=newName;
                     target.text.attr('text',$(this).val());
+                    _this.context.addRedoUndo({
+                        redo:function () {
+                            const node=_this.context.getNodeByUUID(uuid);
+                            node.name=newName;
+                            node._buildText();
+                        },
+                        undo:function () {
+                            const node=_this.context.getNodeByUUID(uuid);
+                            node.name=oldName;
+                            node._buildText();
+                        }
+                    })
                 });
                 this.propContainer.append(target._tool.getPropertyContainer());
             }else if(target instanceof Connection){
@@ -155,9 +234,23 @@ export default class FlowDesigner{
                 nameGroup.append(nameText);
                 this.propContainer.append(nameGroup);
                 nameText.change(function(e){
-                    target.name=$(this).val();
+                    const newName=$(this).val(),oldName=target.name,uuid=target.uuid;
+                    target.name=newName;
                     target._buildText();
+                    _this.context.addRedoUndo({
+                        redo:function () {
+                            const node=_this.context.getNodeByUUID(uuid);
+                            node.name=newName;
+                            node._buildText();
+                        },
+                        undo:function () {
+                            const node=_this.context.getNodeByUUID(uuid);
+                            node.name=oldName;
+                            node._buildText();
+                        }
+                    });
                 });
+
                 const lineTypeGroup=$(`<div class="form-group"><label>线型</label></div>`);
                 const typeSelect=$(`<select class="form-control">
                     <option value="line">直线</option>
@@ -166,9 +259,22 @@ export default class FlowDesigner{
                 lineTypeGroup.append(typeSelect);
                 typeSelect.val(target.type);
                 typeSelect.change(function(e){
-                    target.type=$(this).val();
+                    const type=$(this).val(),uuid=target.uuid,oldType=target.type;
+                    target.type=type;
                     target.updatePath();
                     _this.context.resetSelection();
+                    _this.context.addRedoUndo({
+                        redo:function () {
+                            const conn=_this.context.getNodeByUUID(uuid);
+                            conn.type=type;
+                            conn.updatePath();
+                        },
+                        undo:function () {
+                            const conn=_this.context.getNodeByUUID(uuid);
+                            conn.type=oldType;
+                            conn.updatePath();
+                        }
+                    })
                 });
                 this.propContainer.append(lineTypeGroup);
                 this.propContainer.append(target.from._tool.getConnectionPropertyContainer());

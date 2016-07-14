@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20120731 at Mon Jul 11 15:18:25 2016
+Created by FontForge 20120731 at Tue Jul 12 19:10:57 2016
  By admin
 </metadata>
 <defs>
@@ -16,10 +16,10 @@ Created by FontForge 20120731 at Mon Jul 11 15:18:25 2016
     ascent="896"
     descent="-128"
     x-height="792"
-    bbox="0 -128 1024 896"
+    bbox="0 -161 1024 896"
     underline-thickness="50"
     underline-position="-100"
-    unicode-range="U+0078-E608"
+    unicode-range="U+0078-E60A"
   />
 <missing-glyph horiz-adv-x="374" 
 d="M34 0v682h272v-682h-272zM68 34h204v614h-204v-614z" />
@@ -53,5 +53,11 @@ t9 22t22 9.5t22 -9l261 -258l-1 152q-1 9 6 16t16 7h16q10 0 16.5 -5.5t7.5 -15.5v-2
 d="M219 238h512v-147h-512v147zM293 677h365v-147h-365v147zM439 457v-146h-293v-293h293v-146h73v146h293v293h-293v146h219v293h-219v146h-73v-146h-220v-293h220z" />
     <glyph glyph-name="uniE608" unicode="&#xe608;" 
 d="M658 165v512h147v-512h-147zM219 238v365h147v-365h-147zM439 384h146v-293h293v293h146v73h-146v293h-293v-293h-146v220h-293v-220h-146v-73h146v-219h293v219z" />
+    <glyph glyph-name="uniE609" unicode="&#xe609;" horiz-adv-x="1025" 
+d="M897 582q-62 62 -141.5 95t-166.5 33t-166.5 -33t-141.5 -95t-94.5 -141t-32.5 -167v-66l-110 110q-8 8 -18.5 8t-18 -7.5t-7.5 -18.5t8 -18l153 -154q8 -7 18.5 -7t17.5 7l154 154q7 7 7 18t-7.5 18.5t-18 7.5t-17.5 -8l-110 -110v66q0 105 51.5 193.5t140 139.5
+t192.5 51t192.5 -51t140 -139.5t51.5 -193t-51.5 -193t-140 -140t-192.5 -51.5q-11 0 -18.5 -7.5t-7.5 -18t7.5 -18t18.5 -7.5q87 0 166.5 33t141 94.5t94.5 141t33 167t-33 166.5t-94 141z" />
+    <glyph glyph-name="uniE60A" unicode="&#xe60a;" horiz-adv-x="1025" 
+d="M128 582q61 62 140.5 95t166.5 33t166.5 -33t141.5 -95t95 -141t33 -167v-66l109 110q8 8 18.5 8t18 -7.5t7.5 -18.5t-7 -18l-154 -154q-7 -7 -18 -7t-18 7l-154 154q-7 7 -7 18t7.5 18.5t18 7.5t17.5 -8l110 -110v66q0 105 -51.5 193.5t-140 139.5t-192.5 51t-192.5 -51
+t-140 -139.5t-51.5 -193t51.5 -193t140 -140t192.5 -51.5q11 0 18.5 -7.5t7.5 -18t-7.5 -18t-18.5 -7.5q-87 0 -166.5 33t-141 94.5t-94.5 141t-33 167t33 166.5t94 141h1z" />
   </font>
 </defs></svg>

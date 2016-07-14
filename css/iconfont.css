@@ -16,7 +16,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .fd-delete:before { content: "\e605"; }
+.fd-undo:before { content: "\e609"; }
 .fd-snapto:before { content: "\e603"; }
+.fd-redo:before { content: "\e60a"; }
 .fd-select:before { content: "\e601"; }
 .fd-align-center:before { content: "\e607"; }
 .fd-align-middle:before { content: "\e608"; }

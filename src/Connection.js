@@ -5,10 +5,12 @@ import Raphael from 'raphael';
 import DragController from './DragController.js';
 
 export default class Connection{
-    constructor(figure,pos){
-        this.context=figure.context;
+    constructor(node,pos){
+        this.context=node.context;
+        this.uuid=this.context.nextUUID();
         this.context.allFigures.push(this);
-        this.from=figure;
+        this.from=node;
+        this.from.fromConnections.push(this);
         this.to=null;
         this.endX=pos.endX;
         this.endY=pos.endY;
@@ -22,12 +24,35 @@ export default class Connection{
         this.path.toBack();
     }
 
+    changeFromNode(newFrom){
+        const oldFromConnections=this.from.fromConnections;
+        const index=oldFromConnections.indexOf(this);
+        oldFromConnections.splice(index,1);
+        this.from=newFrom;
+        const newFromConnections=newFrom.fromConnections;
+        newFromConnections.push(this);
+        this.updatePath();
+    }
+
+    changeToNode(newTo){
+        const oldToConnections=this.to.toConnections;
+        const index=oldToConnections.indexOf(this);
+        oldToConnections.splice(index,1);
+        this.to=newTo;
+        const newToConnections=newTo.toConnections;
+        newToConnections.push(this);
+        this.updatePath();
+    }
+
     remove(){
         const toConns=this.to.toConnections,fromConns=this.from.fromConnections;
         const toIndex=toConns.indexOf(this),fromIndex=fromConns.indexOf(this);
         toConns.splice(toIndex,1);
         fromConns.splice(fromIndex,1);
         this.path.remove();
+        if(this.text){
+            this.text.remove();
+        }
     }
 
     select(){
@@ -40,11 +65,17 @@ export default class Connection{
     }
 
     updatePath(){
-        this.path.attr('path',this.buildPathInfo());
+        if(this.pathInfo){
+            this.path.attr('path',this.pathInfo);
+            this.pathInfo=null;
+        }else{
+            this.path.attr('path',this.buildPathInfo());
+        }
         this._buildText();
     }
-    endPath(endFigure){
-        this.to=endFigure;
+    endPath(toNode){
+        this.to=toNode;
+        toNode.toConnections.push(this);
         this.updatePath();
     }
     buildPathInfo(){
@@ -57,10 +88,22 @@ export default class Connection{
         }
     }
 
-    toJson(){
+    fromJSON(json){
+        this.pathInfo=json.path;
+        this.type=json.type;
+        this.name=json.name;
+        if(json.uuid){
+            this.uuid=json.uuid;
+        }
+        this.updatePath();
+    }
+
+    toJSON(){
         const json = {
             path: this.buildPathInfo(),
-            text:this.name
+            text:this.name,
+            uuid:this.uuid,
+            type:this.type
         };
         return json;
     }

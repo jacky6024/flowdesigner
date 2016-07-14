@@ -89,8 +89,24 @@ export default class DragPoint{
             this.ox=this.attr('x');
             this.oy=this.attr('y');
             _this.controller.removeOthers(_this);
+            this.oldConnectionPathInfo=_this.connection.buildPathInfo();
         };
         var dragEnd = function() {
+            const newConnectionPathInfo=_this.connection.buildPathInfo(),oldConnectionPathInfo=this.oldConnectionPathInfo,uuid=_this.connection.uuid;
+            _this.context.addRedoUndo({
+                redo:function () {
+                    const conn=_this.context.getNodeByUUID(uuid);
+                    conn.pathInfo=newConnectionPathInfo;
+                    conn.updatePath();
+                    conn._buildText();
+                },
+                undo:function () {
+                    const conn=_this.context.getNodeByUUID(uuid);
+                    conn.pathInfo=oldConnectionPathInfo;
+                    conn.updatePath();
+                    conn._buildText();
+                }
+            });
             _this.controller.remove();
         };
         this.rect.drag(dragMove,dragStart,dragEnd);

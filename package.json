@@ -17,7 +17,9 @@
     "bootstrap": "^3.3.6",
     "events": "^1.1.1",
     "jquery": "^2.1.0",
-    "raphael": "^2.2.1"
+    "node-uuid": "^1.4.7",
+    "raphael": "^2.2.1",
+    "undo-manager": "^1.0.5"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",

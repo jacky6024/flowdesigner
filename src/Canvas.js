@@ -26,11 +26,18 @@ export default class Canvas{
                 return;
             }
             const x=e.offsetX,y=e.offsetY;
-            const newFigure=currentTool.newNode();
-            if(newFigure){
-                newFigure._tool=currentTool;
-                newFigure._initConfigs(currentTool.getConfigs())
-                newFigure._createFigure(context,{x,y});
+            let newNode=currentTool._newNodeInstance(x,y);
+            if(newNode){
+                const uuid=newNode.uuid,name=newNode.name,jsonData=newNode.toJSON();
+                context.addRedoUndo({
+                    redo:function () {
+                        newNode=currentTool._newNodeInstance(x,y,name);
+                        newNode.initFromJson(jsonData);
+                    },
+                    undo:function () {
+                        context.removeFigureByUUID(uuid);
+                    }
+                });
             }
         });
 

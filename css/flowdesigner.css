@@ -3,6 +3,12 @@
     width: 100%;
     background: #fff
 }
+.fd-node-toolbar{
+    border-left: solid 1px #dddddd;
+    border-right: solid 1px #dddddd;
+    width: 100%;
+    background: #fff
+}
 .fd-canvas-container{
     border: solid 1px #eee;
     height: 600px;
@@ -12,11 +18,11 @@
     width: 300px;
     border: solid 1px #999;
     border-radius: 5px;
-    top: 100px;
-    left: 800px;
+    top: -550px;
+    left: 900px;
+    position: relative;
     background: #ffffff;
     box-shadow: 5px 5px 5px #888888;
-    position: absolute
 }
 .snaptogrid{
     background-image: url("grid-bg.png");
