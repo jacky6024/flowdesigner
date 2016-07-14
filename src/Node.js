@@ -429,10 +429,11 @@ export default class Node{
     }
 
     remove(){
-        this.toConnections.forEach((conn,index)=>{
+        const toConnections=[...this.toConnections],fromConnections=[...this.fromConnections];
+        toConnections.forEach((conn,index)=>{
             this.context.removeFigureByUUID(conn.uuid);
         });
-        this.fromConnections.forEach((conn,index)=>{
+        fromConnections.forEach((conn,index)=>{
             this.context.removeFigureByUUID(conn.uuid);
         });
         this.text.remove();

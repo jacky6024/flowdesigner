@@ -313,28 +313,13 @@ export default class FlowDesigner{
             MsgBox.alert(info);
             return null;
         }
-        const startNodes=[];
+        const jsonData=[];
         this.context.allFigures.forEach((figure,index)=>{
             if(figure instanceof Node){
-                if(figure.toConnections===0){
-                    startNodes.push(figure);
-                }
+                jsonData.push(figure.toJSON());
             }
         });
-        if(startNodes.length===0){
-            MsgBox.alert('未发现起始节点，不能保存.');
-            return;
-        }
-        if(startNodes.length===1){
-            const json=startNodes[0].toJSON();
-            return json;
-        }else{
-            const json=[];
-            startNodes.forEach((node,index)=>{
-                json.push(node.toJSON());
-            });
-            return json;
-        }
+        return jsonData;
     }
 }
 

@@ -154,9 +154,7 @@ export default class Context{
             }
             this.resetSelection();
             selections.forEach((select,index)=>{
-                const jsonData=select.toJSON(),uuid=select.uuid;
-                this.removeFigureByUUID(uuid);
-                const _this=this;
+                const jsonData=select.toJSON(),uuid=select.uuid,_this=this;
                 if(select instanceof Connection){
                     this.addRedoUndo({
                         redo:function () {
@@ -188,6 +186,7 @@ export default class Context{
                         }
                     });
                 }
+                this.removeFigureByUUID(uuid);
             });
         });
         event.eventEmitter.on(event.ALIGN_CENTER,()=>{
