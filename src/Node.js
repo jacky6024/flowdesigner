@@ -33,17 +33,36 @@ export default class Node{
         const {x,y,w,h,name,connections}=json;
         this.move(x,y,w,h);
         this.changeSize(w,h);
+        this.name=name;
         this.text.attr('text',name);
         this.dx=json.dx;
         this.dy=json.dy;
         if(json.uuid){
             this.uuid=json.uuid;
         }
-        this.connectionsJson=connections;
+        this.fromConnectionsJson=json.fromConnections;
+        this.toConnectionsJson=json.toConnections;
     }
 
-    buildConnections(){
-        
+    _buildConnections(){
+        if(this.fromConnectionsJson){
+            for(let json of this.fromConnectionsJson){
+                let toNodeUUID=json.toUUID,fromNodeUUID=json.fromUUID;
+                const toNode=this.context.getNodeByUUID(toNodeUUID),fromNode=this.context.getNodeByUUID(fromNodeUUID);
+                const newConnection=new Connection(fromNode,{endX:0,endY:0});
+                newConnection.fromJSON(json);
+                newConnection.endPath(toNode);
+            }
+        }
+        if(this.toConnectionsJson){
+            for(let json of this.toConnectionsJson){
+                let toNodeUUID=json.toUUID,fromNodeUUID=json.fromUUID;
+                const toNode=this.context.getNodeByUUID(toNodeUUID),fromNode=this.context.getNodeByUUID(fromNodeUUID);
+                const newConnection=new Connection(fromNode,{endX:0,endY:0});
+                newConnection.fromJSON(json);
+                newConnection.endPath(toNode);
+            }
+        }
     }
 
     toJSON(){
@@ -61,11 +80,15 @@ export default class Node{
             dx:this.dx,
             dy:this.dy
         };
-        const connections=[];
+        const fromConnections=[],toConnections=[];
         this.fromConnections.forEach((conn,index)=>{
-            connections.push(conn.toJSON());
+            fromConnections.push(conn.toJSON());
         });
-        json.connections=connections;
+        this.toConnections.forEach((conn,index)=>{
+            toConnections.push(conn.toJSON());
+        });
+        json.fromConnections=fromConnections;
+        json.toConnections=toConnections;
         return json;
     }
 
@@ -407,10 +430,10 @@ export default class Node{
 
     remove(){
         this.toConnections.forEach((conn,index)=>{
-            conn.remove();
+            this.context.removeFigureByUUID(conn.uuid);
         });
         this.fromConnections.forEach((conn,index)=>{
-            conn.remove();
+            this.context.removeFigureByUUID(conn.uuid);
         });
         this.text.remove();
         this.icon.remove();

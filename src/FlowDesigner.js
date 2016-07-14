@@ -218,12 +218,12 @@ export default class FlowDesigner{
                         redo:function () {
                             const node=_this.context.getNodeByUUID(uuid);
                             node.name=newName;
-                            node._buildText();
+                            node.text.attr('text',newName);
                         },
                         undo:function () {
                             const node=_this.context.getNodeByUUID(uuid);
                             node.name=oldName;
-                            node._buildText();
+                            node.text.attr('text',oldName);
                         }
                     })
                 });

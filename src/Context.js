@@ -183,7 +183,7 @@ export default class Context{
                             const newNode=tool._newNodeInstance(10,10,'');
                             if(newNode){
                                 newNode.initFromJson(jsonData);
-                                newNode.buildConnections();
+                                newNode._buildConnections();
                             }
                         }
                     });

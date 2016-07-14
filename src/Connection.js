@@ -103,7 +103,11 @@ export default class Connection{
             path: this.buildPathInfo(),
             text:this.name,
             uuid:this.uuid,
-            type:this.type
+            type:this.type,
+            to:this.to.name,
+            toUUID:this.to.uuid,
+            from:this.from.name,
+            fromUUID:this.from.uuid
         };
         return json;
     }
@@ -295,9 +299,6 @@ export default class Connection{
         if(!this.name){
             return;
         }
-        if(this.text){
-            this.text.remove();
-        }
         let pos;
         const pathInfo=this.path.attr('path');
         if(pathInfo.length===2){
@@ -308,10 +309,14 @@ export default class Connection{
             const point=pathInfo[targetPointIndex];
             pos={x:point[1],y:point[2]};
         }
-        this.text=this.context.paper.text(pos.x+10,pos.y+10,this.name);
-        this.text.attr({'font-size':'14pt','fill':'#2196F3'});
-        this.text.mousedown(function(e){
-           e.preventDefault();
-        });
+        if(this.text){
+            this.text.attr({x:pos.x+10,y:pos.y+10,text:this.name});
+        }else{
+            this.text=this.context.paper.text(pos.x+10,pos.y+10,this.name);
+            this.text.attr({'font-size':'14pt','fill':'#2196F3'});
+            this.text.mousedown(function(e){
+                e.preventDefault();
+            });
+        }
     }
 }
