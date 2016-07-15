@@ -169,7 +169,7 @@ export default class Connection{
             return 'M'+x1+' '+y1+' L'+x2+' '+y2;
         }
     }
-
+    
     _buildFromFigureIntersetion(path,c){
         if(c){
             const fromRect=this.from.rect;
@@ -180,7 +180,7 @@ export default class Connection{
             path.push(['M',x1,y1]);
             path.push(['L',x,y]);
         }
-        const fromFigurePathInfo=this.from.getPathInfo();
+        const fromFigurePathInfo=this.from.getPathInfo(true);
         let dot=Raphael.pathIntersection(fromFigurePathInfo,path);
         if(dot.length>0){
             let p={x:path[1][1],y:path[1][2]};
@@ -198,42 +198,15 @@ export default class Connection{
             path.push(['M',x,y]);
             path.push(['L',x2,y2]);
         }
-        const toFigurePathInfo=this.to.getPathInfo();
+        const toFigurePathInfo=this.to.getPathInfo(true);
         let dot=Raphael.pathIntersection(toFigurePathInfo,path);
         if(dot.length>0){
             let p={x:path[0][1],y:path[0][2]};
-            this._buildIntersectionDot(p,dot);
             return {x:dot[0].x,y:dot[0].y};
         }
         return null;
     }
-
-    _buildIntersectionDot(p,dot){
-        const d=dot[0];
-        const mpx=Math.round(p.x),mdx=Math.round(d.x),mpy=Math.round(p.y),mdy=Math.round(d.y);
-        if(mpx===mdx){
-            if(mpy>mdy){
-                d.y+=10;
-            }else if(mpy<mdy){
-                d.y-=10;
-            }
-        }else if(mpx>mdx){
-            d.x+=10;
-            if(mpy>mdy){
-                d.y+=10;
-            }else if(mpy<mdy){
-                d.y-=10;
-            }
-        }else if(mpx<mdx){
-            d.x-=10;
-            if(mpy>mdy){
-                d.y+=10;
-            }else if(mpy<mdy){
-                d.y-=10;
-            }
-        }
-    }
-
+    
     _buildCurveLinePathInfo(){
         const fromRect=this.from.rect;
         let x1=fromRect.attr('x'),y1=fromRect.attr('y'),w1=fromRect.attr('width'),h1=fromRect.attr('height');
@@ -244,7 +217,7 @@ export default class Connection{
             x2=toRect.attr('x'),y2=toRect.attr('y'),w2=toRect.attr('width'),h2=toRect.attr('height');
             x2+=w2/2,y2+=h2/2-10;
         }
-        const fromFigurePathInfo=this.from.getPathInfo();
+        const fromFigurePathInfo=this.from.getPathInfo(true);
         let dis1=Math.abs((x1+w1/2)-(x2-w2/2)),dis2=Math.abs((y1+h1/2)-(y2-h2/2));
         let line1StartPoint='M'+x1+' '+y1;
         if(dis1>=dis2){
@@ -256,7 +229,7 @@ export default class Connection{
             }
             if(this.to){
                 let lastLine='M'+x1+' '+y2+' L'+x2+' '+y2;
-                let toFigurePathInfo=this.to.getPathInfo();
+                let toFigurePathInfo=this.to.getPathInfo(true);
                 dot=Raphael.pathIntersection(toFigurePathInfo,lastLine);
                 if(dot.length>0){
                     x2=dot[0].x,y2=dot[0].y;
@@ -278,7 +251,7 @@ export default class Connection{
             }
             if(this.to){
                 let lastLine='M'+x2+' '+y1+' L'+x2+' '+y2;
-                let toFigurePathInfo=this.to.getPathInfo();
+                let toFigurePathInfo=this.to.getPathInfo(true);
                 dot=Raphael.pathIntersection(toFigurePathInfo,lastLine);
                 if(dot.length>0){
                     x2=dot[0].x,y2=dot[0].y;

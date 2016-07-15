@@ -75,6 +75,7 @@ export default class Node{
             y:this.rect.attr('y'),
             w:this.rect.attr('width'),
             h:this.rect.attr('height'),
+            type:this.constructor.name,
             name:this.name,
             uuid:this.uuid,
             dx:this.dx,
@@ -469,15 +470,11 @@ export default class Node{
         });
     }
 
-    getPathInfo(){
-        var p1 = this.rect.attr("x");
-        var p2 = this.rect.attr("y");
-        var p3 = this.rect.attr("x")+this.rect.attr("width");
-        var p4 = this.rect.attr("y");
-        var p5 = this.rect.attr("x")+this.rect.attr("width");
-        var p6 = this.rect.attr("y")+this.rect.attr("height");
-        var p7 = this.rect.attr("x");
-        var p8 = this.rect.attr("y")+this.rect.attr("height");
-        return "M "+p1+" "+p2+" L "+p3+" "+p4+" L "+p5+" "+p6+" L "+p7+"  "+p8+" L "+p1+"  "+p2+"";
+    getPathInfo(forIntersection){
+        let x=this.rect.attr("x"),y=this.rect.attr("y"),w=this.rect.attr("width"),h=this.rect.attr("height");
+        if(forIntersection){
+            x-=5,y-=5,w+=10,h+=10;
+        }
+        return "M "+x+" "+y+" L "+(x+w)+" "+y+" L "+(x+w)+" "+(y+h)+" L "+x+"  "+(y+h)+" L "+x+"  "+y;
     }
 }

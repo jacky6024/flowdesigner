@@ -17,11 +17,15 @@ export default class Tool{
     getConfigs(){
         return {};
     }
-    getPropertyContainer(){
-        return '<div/>';
+    getPropertiesProducer(){
+        return function () {
+            return '<div/>';
+        };
     }
-    getConnectionPropertyContainer() {
-        return '<div/>';
+    getConnectionPropertiesProducer() {
+        return function () {
+            return '<div/>';
+        };
     }
     _newNodeInstance(x,y,name){
         const node=this.newNode();
@@ -31,9 +35,25 @@ export default class Tool{
         node._tool=this;
         node._initConfigs(this.getConfigs());
         if(!name){
-            name=this.getName()+this.count++;
+            name=this._buildNodeName();
         }
         node._createFigure(this.context,{x,y},name);
         return node;
+    }
+    _buildNodeName(){
+        let name=this.getName()+this.count++,exist=false;
+        for(let figure of this.context.allFigures){
+            if(figure instanceof Node){
+                if(figure.name===name){
+                    exist=true;
+                    break;
+                }
+            }
+        }
+        if(exist){
+            return this._buildNodeName();
+        }else{
+            return name;
+        }
     }
 }

@@ -212,6 +212,17 @@ export default class FlowDesigner{
                 this.propContainer.append(nameGroup);
                 nameText.change(function(e){
                     const newName=$(this).val(),oldName=target.name,uuid=target.uuid;
+                    let nameUnique=false;
+                    for(let figure of _this.context.allFigures){
+                        if(figure instanceof Node && figure!==target && figure.name===newName){
+                            nameUnique=true;
+                            break;
+                        }
+                    }
+                    if(nameUnique){
+                        MsgBox.alert('节点名已存在!');
+                        return;
+                    }
                     target.name=newName;
                     target.text.attr('text',$(this).val());
                     _this.context.addRedoUndo({
@@ -227,14 +238,25 @@ export default class FlowDesigner{
                         }
                     })
                 });
-                this.propContainer.append(target._tool.getPropertyContainer());
+                this.propContainer.append(target._tool.getPropertiesProducer().call(target));
             }else if(target instanceof Connection){
                 const nameGroup=$(`<div class="form-group"><label>连线名称</label></div>`);
                 const nameText=$(`<input type="text" class="form-control" value="${target.name ? target.name : ''}">`);
                 nameGroup.append(nameText);
                 this.propContainer.append(nameGroup);
                 nameText.change(function(e){
-                    const newName=$(this).val(),oldName=target.name,uuid=target.uuid;
+                    const newName=$(this).val(),oldName=target.name,uuid=target.uuid,fromConnections=target.fromConnections;
+                    let nameUnique=false;
+                    for(let conn of fromConnections){
+                        if(conn!==target && conn.name===newName){
+                            nameUnique=true;
+                            break;
+                        }
+                    }
+                    if(nameUnique){
+                        MsgBox.alert(`连线名已存在`);
+                        return;
+                    }
                     target.name=newName;
                     target._buildText();
                     _this.context.addRedoUndo({
@@ -277,7 +299,7 @@ export default class FlowDesigner{
                     })
                 });
                 this.propContainer.append(lineTypeGroup);
-                this.propContainer.append(target.from._tool.getConnectionPropertyContainer());
+                this.propContainer.append(target.from._tool.getConnectionPropertiesProducer().call(target));
             }
         });
         event.eventEmitter.on(event.CANVAS_SELECTED,()=>{

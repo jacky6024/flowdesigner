@@ -20,4 +20,19 @@ export default class TaskTool extends Tool{
             out:-1
         };
     }
+    getPropertiesProducer(){
+        return function () {
+            const container=$(`<div class="form-group"><label>是否生成任务</label></div>`);
+            const taskList=$(`<select class="form-control"></select>`);
+            container.append(taskList);
+            taskList.append(`<option value="true">是</option>`);
+            taskList.append(`<option value="false">否</option>`);
+            const _this=this;
+            taskList.change(function () {
+                _this.createTask=$(this).val();
+            });
+            taskList.val(this.createTask);
+            return container;
+        }
+    }
 }
