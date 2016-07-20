@@ -87,11 +87,11 @@ export default class Context{
         event.eventEmitter.emit(event.CANVAS_SELECTED);
     }
     registerTool(tool){
-        const name=tool.getName();
-        if(this.toolsMap.has(name)){
-            throw `Figure [${name}] already exist.`;
+        const type=tool.getType();
+        if(this.toolsMap.has(type)){
+            throw `Figure [${type}] already exist.`;
         }
-        this.toolsMap.set(name,tool);
+        this.toolsMap.set(type,tool);
     }
 
     nextUUID(){

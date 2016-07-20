@@ -5,7 +5,7 @@ export default class Tool{
     constructor(){
         this.count=1;
     }
-    getName(){
+    getType(){
         throw 'Unsupport this method.';
     }
     getIcon(){

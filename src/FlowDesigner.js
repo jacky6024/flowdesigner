@@ -40,6 +40,7 @@ export default class FlowDesigner{
         propertyTab.mousedown(function (e) {
            e.preventDefault();
         });
+        tabContent.append('<div class="text-danger">属性值修改后，请回车以确认</div>');
         this.propContainer=$(`<div id="${propContainerId}"/>`);
         const tabContent=$(`<div class="tab-content" style="min-height: 200px;padding:10px"/>`);
         tabContent.append(this.propContainer);
@@ -47,6 +48,25 @@ export default class FlowDesigner{
         propertyPanel.draggable();
         this._bindSnapToEvent();
         this._bindShortcutKey();
+    }
+
+    addNode(json){
+        if(!json.type){
+            MsgBox.alert("添加节点没有type属性，无法添加.");
+            return;
+        }
+        if(!json.x || !json.y || !json.name){
+            MsgBox.alert("添加节点需要有x、y及name属性，否则无法添加");
+            return;
+        }
+        if(this.toolsMap.has(json.type)){
+            const tool=this.toolsMap.get(json.type);
+            const newNode=currentTool._newNodeInstance(json.x,json.y,json.name);
+            newNode.initFromJson(json);
+        }else{
+            MsgBox.alert(`添加的节点类型${json.type}不存在.`);
+            return;
+        }
     }
 
     _bindShortcutKey(){
@@ -90,8 +110,10 @@ export default class FlowDesigner{
         this._bindSelectionEvent();
     }
 
-    getPropertyContainer(){
-        return '<div/>';
+    getPropertiesProducer(){
+        return function (){
+            return '<div/>';
+        };
     }
 
     _buildTools(){
@@ -202,13 +224,13 @@ export default class FlowDesigner{
     _buildNodeTools(){
         for(let tool of this.context.toolsMap.values()){
             let tools=$(`
-                <label class="btn btn-default" style="border:none;border-radius:0" title="${tool.getName()}">
-                    <input type="radio" name="tools" title="${tool.getName()}"> ${tool.getIcon()}
+                <label class="btn btn-default" style="border:none;border-radius:0" title="${tool.getType()}">
+                    <input type="radio" name="tools" title="${tool.getType()}"> ${tool.getIcon()}
                 </label>
             `);
             this.nodeToolbar.append(tools);
             tools.click(function () {
-                event.eventEmitter.emit(event.TRIGGER_TOOL,tool.getName());
+                event.eventEmitter.emit(event.TRIGGER_TOOL,tool.getType());
             });
         };
     }
@@ -316,8 +338,9 @@ export default class FlowDesigner{
         });
         event.eventEmitter.on(event.CANVAS_SELECTED,()=>{
             this.propContainer.empty();
-            this.propContainer.append(this.getPropertyContainer());
+            this.propContainer.append(this.getPropertiesProducer().call(this));
         });
+        event.eventEmitter.emit(event.CANVAS_SELECTED);
     }
 
     addButton(btnConfig){
@@ -337,7 +360,7 @@ export default class FlowDesigner{
     toJSON(){
         return this.elementsToJSON();
     }
-    elementsToJSON(){
+    validate(){
         let errors=[];
         this.context.allFigures.forEach((figure,index)=>{
             if(figure instanceof Node){
@@ -354,8 +377,11 @@ export default class FlowDesigner{
             });
             info='<span style="color:orangered">错误：<br>'+info+'</span>';
             MsgBox.alert(info);
-            return null;
+            return false;
         }
+        return true;
+    }
+    elementsToJSON(){
         const jsonData=[];
         this.context.allFigures.forEach((figure,index)=>{
             if(figure instanceof Node){

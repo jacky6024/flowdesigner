@@ -68,6 +68,36 @@ export default class Connection{
         if(this.pathInfo){
             this.path.attr('path',this.pathInfo);
             this.pathInfo=null;
+        }else if(this.g){
+            const ga=g.split(','),L=ga.length;
+            const path=[];
+            const fromRect=this.from.rect,toRect=this.to.rect;
+            let x1=fromRect.attr('x'),y1=fromRect.attr('y'),w1=fromRect.attr('width'),h1=fromRect.attr('height');
+            x1+=w1/2,y1+=h1/2-10;
+            path.push(['M',x1,y1]);
+            path.push(['L',ga[0],ga[1]]);
+            let dot=this._buildFromFigureIntersetion(path);
+            if(dot){
+                x1=dot.x,y1=dot.y;
+            }
+
+            path.splice(0,L-1);
+            path.push('M',ga[L-2],ga[L-1]);
+            let x2=toRect.attr('x'),y2=toRect.attr('y'),w2=toRect.attr('width'),h2=toRect.attr('height');
+            x2+=w2/2,y2+=h2/2-10;
+            path.push(['L',x2,y2]);
+            dot=this._buildToFigureIntersetion(path);
+            if(dot){
+                x2=dot.x,y2=dot.y;
+            }
+            let i=0,pathInfo=[['M',x1,y1]];
+            while(i<L){
+                pathInfo.push(['L',ga[i],ga[i+1]]);
+                i+=2;
+            }
+            pathInfo.push(['L',x2,y2]);
+            this.path.attr('path',pathInfo);
+            this.g=null;
         }else{
             this.path.attr('path',this.buildPathInfo());
         }
@@ -90,7 +120,8 @@ export default class Connection{
 
     fromJSON(json){
         this.pathInfo=json.path;
-        this.type=json.type;
+        this.g=json.g;
+        this.type=json.type || 'line';
         this.name=json.name;
         if(json.uuid){
             this.uuid=json.uuid;
@@ -100,8 +131,8 @@ export default class Connection{
 
     toJSON(){
         const json = {
-            path: this.buildPathInfo(),
-            text:this.name,
+            path: this.path.attr('path'),
+            name:this.name,
             uuid:this.uuid,
             type:this.type,
             to:this.to.name,
@@ -127,7 +158,7 @@ export default class Connection{
             pathInfo=this.path.attr('path');
             if(pathInfo && pathInfo.length===2)pathInfo=null;
         }
-        let path=[['M',x1,y1],['L',x2,y2]];//'M'+x1+' '+y1+' L'+x2+' '+y2;
+        let path=[['M',x1,y1],['L',x2,y2]];
         if(pathInfo){
             let firstLineEnd=pathInfo[1];
             path=[['M',x1,y1]];

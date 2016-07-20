@@ -35,11 +35,10 @@ export default class Node{
         this.changeSize(w,h);
         this.name=name;
         this.text.attr('text',name);
-        this.dx=json.dx;
-        this.dy=json.dy;
         if(json.uuid){
             this.uuid=json.uuid;
         }
+        this.connections=json.connections;
         this.fromConnectionsJson=json.fromConnections;
         this.toConnectionsJson=json.toConnections;
     }
@@ -63,6 +62,27 @@ export default class Node{
                 newConnection.endPath(toNode);
             }
         }
+        if(this.connections){
+            for(let json of this.connections){
+                let fromNode=this,to=json.to,toNode=null;
+                for(let figure of this.context.allFigures){
+                    if(figure instanceof Connection){
+                        continue;
+                    }
+                    if(figure.name===to){
+                        toNode=figure;
+                        break;
+                    }
+                }
+                if(!toNode){
+                    MsgBox.alert(`连线的目标节点${to}不存在`);
+                    return;
+                }
+                const newConnection=new Connection(fromNode,{endX:0,endY:0});
+                newConnection.fromJSON(json);
+                newConnection.endPath(toNode);
+            }
+        }
     }
 
     toJSON(){
@@ -77,9 +97,7 @@ export default class Node{
             h:this.rect.attr('height'),
             type:this.constructor.name,
             name:this.name,
-            uuid:this.uuid,
-            dx:this.dx,
-            dy:this.dy
+            uuid:this.uuid
         };
         const fromConnections=[],toConnections=[];
         this.fromConnections.forEach((conn,index)=>{
@@ -110,13 +128,13 @@ export default class Node{
         this.uuid=context.nextUUID();
         this.context=context;
         this.paper=context.paper;
-        const w=50,h=80;
-        pos={x:pos.x-w/2,y:pos.y-h/2+20};
+        const w=40,h=70;
+        pos={x:pos.x-w/2,y:pos.y-h/2+15};
         this.rect=this.paper.rect(pos.x,pos.y,w,h);
         this.rect.attr({'fill':'#fff','stroke':'#fff','stroke-dasharray':'--'});
         this.context.allFigures.push(this);
         this.svgIconPath=this.getSvgIcon();
-        this.icon=this.paper.image(this.svgIconPath,pos.x,pos.y,50,50);
+        this.icon=this.paper.image(this.svgIconPath,pos.x,pos.y,40,40);
         this.name=name;
         const textX=pos.x+w/2,textY=pos.y+h-16;
         this.text=this.paper.text(textX,textY,this.name);

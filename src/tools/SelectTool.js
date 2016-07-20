@@ -4,7 +4,7 @@
 import Tool from '../Tool.js';
 
 export default class SelectTool extends Tool{
-    getName(){
+    getType(){
         return "Select";
     }
     getIcon(){

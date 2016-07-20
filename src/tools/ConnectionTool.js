@@ -3,7 +3,7 @@
  */
 import Tool from '../Tool.js';
 export default class ConnectionTool extends Tool{
-    getName(){
+    getType(){
         return 'Connection';
     }
     getIcon(){
