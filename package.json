@@ -1,8 +1,8 @@
 {
   "name": "flowdesigner",
-  "version": "1.1.7",
+  "version": "1.1.9",
   "description": "FlowDesigner is a js library for drawing flow chart on web",
-  "main": "dist/index.bundle.js",
+  "main": "index.js",
   "scripts": {
     "build": "babel -c -d ./lib ./src/ --presets es2015",
     "prepublish": "npm run build"
