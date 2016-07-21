@@ -41,7 +41,7 @@ export default class Tool{
         return node;
     }
     _buildNodeName(){
-        let name=this.getName()+this.count++,exist=false;
+        let name=this.getType()+this.count++,exist=false;
         for(let figure of this.context.allFigures){
             if(figure instanceof Node){
                 if(figure.name===name){
