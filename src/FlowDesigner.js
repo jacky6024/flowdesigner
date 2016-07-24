@@ -26,6 +26,7 @@ export default class FlowDesigner{
         container.append(this.canvasContainer);
         this.context=new Context(this.canvasContainer);
         this.canvas=new Canvas(this.context);
+        this.context.flowDesigner=this;
 
         const propContainerId='_prop_container';
         const propertyPanel=$('<div class="fd-property-panel"/>');
@@ -41,7 +42,7 @@ export default class FlowDesigner{
            e.preventDefault();
         });
         this.propContainer=$(`<div id="${propContainerId}"/>`);
-        const tabContent=$(`<div class="tab-content" style="min-height: 200px;padding:10px"/>`);
+        const tabContent=$(`<div class="tab-content" style="min-height: 260px;padding:10px"/>`);
         tabContent.append('<div class="text-danger" style="margin-bottom:8px">属性值修改后，请回车以确认</div>');
         tabContent.append(this.propContainer);
         propertyPanel.append(tabContent);
@@ -279,7 +280,7 @@ export default class FlowDesigner{
                 nameGroup.append(nameText);
                 this.propContainer.append(nameGroup);
                 nameText.change(function(e){
-                    const newName=$(this).val(),oldName=target.name,uuid=target.uuid,fromConnections=target.fromConnections;
+                    const newName=$(this).val(),oldName=target.name,uuid=target.uuid,fromConnections=target.from.fromConnections;
                     let nameUnique=false;
                     for(let conn of fromConnections){
                         if(conn!==target && conn.name===newName){

@@ -221,9 +221,16 @@ export default class Node{
             if(this.dragging){
                 return;
             }
-            const currentTool=context.currentTool;
+            let currentTool=context.currentTool;
             if(!currentTool){
                 return;
+            }
+            if(!(currentTool instanceof ConnectionTool)){
+                if(!(currentTool instanceof SelectTool)){
+                    context.currentTool=context.selectTool;
+                    currentTool=context.currentTool;
+                    context.flowDesigner.nodeToolbar.children('label').removeClass('active');
+                }
             }
             if(currentTool instanceof SelectTool){
                 if(context.selectionFigures.length===0){

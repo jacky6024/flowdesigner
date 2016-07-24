@@ -17,7 +17,17 @@ export function confirm(msg,callback){
     dialog.modal('show');
 };
 
-function buildDialog(title,msg,buttons){
+export function dialog(title,content,callback){
+    const dialog=buildDialog(title,content,[{
+        name:'确认',
+        click:function(){
+            callback.call(this);
+        }
+    }]);
+    dialog.modal('show');
+};
+
+function buildDialog(title,dialogContent,buttons){
     let modal=$(`<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>`);
     let dialog=$(`<div class="modal-dialog"></div>`);
     modal.append(dialog);
@@ -31,8 +41,11 @@ function buildDialog(title,msg,buttons){
             </h4>
          </div>
          <div class="modal-body">
-            ${msg}
+            ${typeof(dialogContent)==='string' ? dialogContent : ''}
          </div>`);
+    if(typeof(content)==='object'){
+        content.find('.modal-body').append(dialogContent);
+    }
     dialog.append(content);
     let footer=$(`<div class="modal-footer"></div>`);
     content.append(footer);
@@ -41,6 +54,7 @@ function buildDialog(title,msg,buttons){
             let button=$(`<button type="button" class="btn btn-default">${btn.name}</button>`);
             button.click(function(e){
                 btn.click.call(this);
+                modal.modal('hide');
             }.bind(this));
             footer.append(button);
         });
