@@ -1,6 +1,6 @@
 {
   "name": "flowdesigner",
-  "version": "1.1.21",
+  "version": "1.1.22",
   "description": "FlowDesigner is a js library for drawing flow chart on web",
   "main": "index.js",
   "scripts": {
