@@ -43,7 +43,7 @@ function buildDialog(title,dialogContent,buttons){
          <div class="modal-body">
             ${typeof(dialogContent)==='string' ? dialogContent : ''}
          </div>`);
-    if(typeof(content)==='object'){
+    if(typeof(dialogContent)==='object'){
         content.find('.modal-body').append(dialogContent);
     }
     dialog.append(content);

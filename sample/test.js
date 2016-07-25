@@ -1,6 +1,7 @@
 /**
  * Created by Jacky.gao on 2016/6/29.
  */
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './iconfont/iconfont.css';
 import FlowDesigner from '../src/FlowDesigner.js'
 import StartTool from './StartTool.js';

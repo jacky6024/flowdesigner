@@ -3,7 +3,6 @@
  */
 import '../css/iconfont.css';
 import '../css/flowdesigner.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import {} from 'bootstrap';
 import {} from './jquery.draggable.js';
 import Canvas from './Canvas.js';
@@ -23,6 +22,7 @@ export default class FlowDesigner{
         container.append(this.nodeToolbar);
 
         this.canvasContainer=$(`<div class="fd-canvas-container"></div>`);
+        this.canvasContainer.css('height',$(window).height()-160);
         container.append(this.canvasContainer);
         this.context=new Context(this.canvasContainer);
         this.canvas=new Canvas(this.context);
@@ -42,7 +42,7 @@ export default class FlowDesigner{
            e.preventDefault();
         });
         this.propContainer=$(`<div id="${propContainerId}"/>`);
-        const tabContent=$(`<div class="tab-content" style="min-height: 260px;padding:10px"/>`);
+        const tabContent=$(`<div class="tab-content" style="min-height: 300px;padding:10px"/>`);
         tabContent.append('<div class="text-danger" style="margin-bottom:8px">属性值修改后，请回车以确认</div>');
         tabContent.append(this.propContainer);
         propertyPanel.append(tabContent);
@@ -363,14 +363,14 @@ export default class FlowDesigner{
     }
     validate(){
         let errors=[];
-        this.context.allFigures.forEach((figure,index)=>{
+        for(let figure of this.context.allFigures){
             if(figure instanceof Node){
                 const errorInfo=figure.validate();
                 if(errorInfo){
                     errors.push(errorInfo);
                 }
             }
-        });
+        }
         if(errors.length>0){
             let info='';
             errors.forEach((error,index)=>{
