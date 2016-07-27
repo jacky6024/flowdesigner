@@ -22,7 +22,6 @@ export default class Context{
         this.selectionRects=this.paper.set();
         this.selectionPaths=this.paper.set();
         this.currentConnection=null;
-        this.currentTool=null;
         this._initEvent();
     }
     selectFigure(figure){
@@ -300,5 +299,6 @@ export default class Context{
         this.connectionTool=new ConnectionTool();
         this.selectTool.context=this;
         this.connectionTool.context=this;
+        this.currentTool=this.selectTool;
     }
 }

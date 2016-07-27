@@ -60,9 +60,13 @@ export default class FlowDesigner{
             MsgBox.alert("添加节点需要有x、y及name属性，否则无法添加");
             return;
         }
-        if(this.toolsMap.has(json.type)){
-            const tool=this.toolsMap.get(json.type);
-            const newNode=currentTool._newNodeInstance(json.x,json.y,json.name);
+        if(this.context.toolsMap.has(json.type)){
+            const tool=this.context.toolsMap.get(json.type);
+            let {x,y,width,height,name}=json;
+            x=parseInt(x),y=parseInt(y),width=parseInt(width),height=parseInt(height);
+            const maxWidth=x+width+10,maxHeight=y+height+10;
+            this.context.resizePaper(maxWidth,maxHeight);
+            const newNode=tool._newNodeInstance(x,y,name);
             newNode.initFromJson(json);
         }else{
             MsgBox.alert(`添加的节点类型${json.type}不存在.`);

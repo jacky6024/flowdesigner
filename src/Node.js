@@ -30,9 +30,10 @@ export default class Node{
     }
 
     initFromJson(json){
-        const {x,y,w,h,name,connections}=json;
-        this.move(x,y,w,h);
-        this.changeSize(w,h);
+        let {x,y,width,height,name,connections}=json;
+        x=parseInt(x),y=parseInt(y),width=parseInt(width),height=parseInt(height);
+        this.changeSize(width,height);
+        this.move(x,y,width,height);
         this.name=name;
         this.text.attr('text',name);
         if(json.uuid){
@@ -79,8 +80,8 @@ export default class Node{
                     return;
                 }
                 const newConnection=new Connection(fromNode,{endX:0,endY:0});
-                newConnection.fromJSON(json);
                 newConnection.endPath(toNode);
+                newConnection.fromJSON(json);
             }
         }
     }
@@ -202,7 +203,7 @@ export default class Node{
             var relativeY = mouseY - container.offset().top - this.attr('y');
             var shapeWidth = this.attr('width');
             var shapeHeight = this.attr('height');
-            var resizeBorder = 3;
+            var resizeBorder = 5;
             // Change cursor
             if (relativeX < resizeBorder && relativeY < resizeBorder) {
                 this.attr('cursor', 'nw-resize');

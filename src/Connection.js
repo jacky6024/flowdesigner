@@ -69,7 +69,7 @@ export default class Connection{
             this.path.attr('path',this.pathInfo);
             this.pathInfo=null;
         }else if(this.g){
-            const ga=g.split(','),L=ga.length;
+            const ga=this.g.split(','),L=ga.length;
             const path=[];
             const fromRect=this.from.rect,toRect=this.to.rect;
             let x1=fromRect.attr('x'),y1=fromRect.attr('y'),w1=fromRect.attr('width'),h1=fromRect.attr('height');
@@ -81,8 +81,8 @@ export default class Connection{
                 x1=dot.x,y1=dot.y;
             }
 
-            path.splice(0,L-1);
-            path.push('M',ga[L-2],ga[L-1]);
+            path.splice(0,path.length-1);
+            path.push(['M',ga[L-2],ga[L-1]]);
             let x2=toRect.attr('x'),y2=toRect.attr('y'),w2=toRect.attr('width'),h2=toRect.attr('height');
             x2+=w2/2,y2+=h2/2-10;
             path.push(['L',x2,y2]);
