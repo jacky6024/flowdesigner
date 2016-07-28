@@ -10,11 +10,11 @@ export default class Connection{
         this.uuid=this.context.nextUUID();
         this.context.allFigures.push(this);
         this.from=node;
+        this.name=this.buildConnectionName(node);
         this.from.fromConnections.push(this);
         this.to=null;
         this.endX=pos.endX;
         this.endY=pos.endY;
-        this.selected=false;
         this.type='line';
         this.init();
     }
@@ -22,6 +22,27 @@ export default class Connection{
         this.path=this.context.paper.path(this.buildPathInfo());
         this.path.attr({'stroke-width':'2px','stroke':'#999',"arrow-end": "block-wide-long"});
         this.path.toBack();
+    }
+
+    buildConnectionName(fromNode){
+        let conns=fromNode.fromConnections,name=null;
+        if(conns.length===0){
+            return null;
+        }
+        for(let i=0;i<1000000;i++){
+            name='c'+i;
+            let exist=false;
+            for(let conn of conns){
+                if(conn.name && conn.name===name){
+                    exist=true;
+                    break;
+                }
+            }
+            if(!exist){
+                break;
+            }
+        }
+        return name;
     }
 
     changeFromNode(newFrom){

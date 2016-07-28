@@ -134,6 +134,9 @@ export default class Context{
             const pos=fromConnections.indexOf(this.currentConnection);
             fromConnections.splice(pos,1);
             this.currentConnection.path.remove();
+            if(this.currentConnection.text){
+                this.currentConnection.text.remove();
+            }
         }
         this.currentConnection=null;
     }
