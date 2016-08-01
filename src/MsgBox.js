@@ -27,7 +27,12 @@ export function dialog(title,content,callback){
     dialog.modal('show');
 };
 
-export function buildDialog(title,dialogContent,buttons){
+export function showDialog(title,dialogContent,buttons){
+    const dialog=buildDialog(title,dialogContent,buttons);
+    dialog.modal('show');
+};
+
+function buildDialog(title,dialogContent,buttons){
     let modal=$(`<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>`);
     let dialog=$(`<div class="modal-dialog"></div>`);
     modal.append(dialog);
