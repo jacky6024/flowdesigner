@@ -54,7 +54,9 @@ function buildDialog(title,dialogContent,buttons){
             let button=$(`<button type="button" class="btn btn-default">${btn.name}</button>`);
             button.click(function(e){
                 btn.click.call(this);
-                modal.modal('hide');
+                if(!btn.holdDialog){
+                    modal.modal('hide');
+                }
             }.bind(this));
             footer.append(button);
         });
