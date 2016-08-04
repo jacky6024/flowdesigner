@@ -5,7 +5,7 @@ import Tool from '../src/Tool.js';
 import TaskNode from './TaskNode.js';
 
 export default class TaskTool extends Tool{
-    getName(){
+    getType(){
         return "task";
     }
     getIcon(){

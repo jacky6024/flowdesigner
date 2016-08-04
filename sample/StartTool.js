@@ -5,7 +5,7 @@ import Tool from '../src/Tool.js';
 import StartNode from './StartNode.js';
 
 export default class StartTool extends Tool{
-    getName(){
+    getType(){
         return "start";
     }
     getIcon(){

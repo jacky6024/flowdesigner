@@ -27,9 +27,14 @@ export function dialog(title,content,callback){
     dialog.modal('show');
 };
 
-export function showDialog(title,dialogContent,buttons){
+export function showDialog(title,dialogContent,buttons,events){
     const dialog=buildDialog(title,dialogContent,buttons);
     dialog.modal('show');
+    if(events){
+        for(let event of events){
+            dialog.on(event.name,event.callback);
+        }
+    }
 };
 
 function buildDialog(title,dialogContent,buttons){

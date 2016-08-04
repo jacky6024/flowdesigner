@@ -5,7 +5,7 @@ import Tool from '../src/Tool.js';
 import EndNode from './EndNode.js';
 
 export default class EndTool extends Tool{
-    getName(){
+    getType(){
         return "end";
     }
     getIcon(){
