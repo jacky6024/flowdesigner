@@ -30,7 +30,8 @@ export default class Node{
     }
 
     initFromJson(json){
-        let {x,y,width,height,name,connections}=json;
+        let {x,y,name,connections}=json;
+        let width=json.width || json.w,height=json.height || json.h;
         x=parseInt(x),y=parseInt(y),width=parseInt(width),height=parseInt(height);
         this.changeSize(width,height);
         this.move(x,y,width,height);

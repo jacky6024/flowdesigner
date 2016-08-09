@@ -7,4 +7,4 @@ var MsgBox=require('./lib/MsgBox.js');
 var FlowDesigner=require('./lib/FlowDesigner.js').default;
 var Event=require('./lib/event.js');
 
-module.exports={Tool,Node,MsgBox,Event,FlowDesigner};
+module.exports={Tool:Tool,Node:Node,MsgBox:MsgBox,Event:Event,FlowDesigner:FlowDesigner};
