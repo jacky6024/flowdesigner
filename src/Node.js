@@ -117,7 +117,7 @@ export default class Node{
         if(this.single){
             let exist=false;
             for(let figure of context.allFigures){
-                if(figure.constructor.name===this.constructor.name){
+                if(figure instanceof this.constructor){
                     exist=true;
                     break;
                 }
