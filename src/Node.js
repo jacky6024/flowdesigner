@@ -97,7 +97,6 @@ export default class Node{
             y:this.rect.attr('y'),
             w:this.rect.attr('width'),
             h:this.rect.attr('height'),
-            type:this.constructor.name,
             name:this.name,
             uuid:this.uuid
         };
