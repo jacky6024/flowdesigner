@@ -27,8 +27,8 @@ export function dialog(title,content,callback){
     dialog.modal('show');
 };
 
-export function showDialog(title,dialogContent,buttons,events){
-    const dialog=buildDialog(title,dialogContent,buttons);
+export function showDialog(title,dialogContent,buttons,events,large){
+    const dialog=buildDialog(title,dialogContent,buttons,large);
     dialog.modal('show');
     if(events){
         for(let event of events){
@@ -37,9 +37,10 @@ export function showDialog(title,dialogContent,buttons,events){
     }
 };
 
-function buildDialog(title,dialogContent,buttons){
+function buildDialog(title,dialogContent,buttons,large){
+    const className='modal-dialog'+ (large ? ' modal-lg' : '');
     let modal=$(`<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>`);
-    let dialog=$(`<div class="modal-dialog"></div>`);
+    let dialog=$(`<div class="${className}"></div>`);
     modal.append(dialog);
     let content=$(`<div class="modal-content">
          <div class="modal-header">
