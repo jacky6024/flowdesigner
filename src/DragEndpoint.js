@@ -31,7 +31,7 @@ export default class DragEndpoint{
             }
             this.attr('x',x);
             this.attr('y',y);
-            _this.context.resizePaper(x+5,y+5);
+            _this.context.resizePaper(x+10,y+10);
             const pathInfo=_this.connection.path.attr('path');
             const p=pathInfo[0];
             p[1]=x,p[2]=y;

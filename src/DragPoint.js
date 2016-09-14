@@ -40,7 +40,7 @@ export default class DragPoint{
             if(x<1 || y<1){
                 return;
             }
-            _this.context.resizePaper(x+5,y+5);
+            _this.context.resizePaper(x+15,y+15);
             this.attr('x',x);
             this.attr('y',y);
             targetIndex=Math.round(segmentIndex/2);

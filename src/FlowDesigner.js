@@ -65,7 +65,7 @@ export default class FlowDesigner{
             let {x,y,width,height,name}=json;
             x=parseInt(x),y=parseInt(y),width=parseInt(width),height=parseInt(height);
             const maxWidth=x+width+10,maxHeight=y+height+10;
-            this.context.resizePaper(maxWidth,maxHeight);
+            this.context.resizePaper(maxWidth+50,maxHeight+50);
             const newNode=tool._newNodeInstance(x,y,name);
             newNode.initFromJson(json);
         }else{

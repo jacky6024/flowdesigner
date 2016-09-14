@@ -346,7 +346,7 @@ export default class Node{
             if(x<1 || y<1){
                 return;
             }
-            _this.context.resizePaper(x+100,y+100);
+            _this.context.resizePaper(x+150,y+150);
             let width,height;
             switch (this.attr('cursor')) {
                 case 'nw-resize' :
