@@ -17,3 +17,5 @@ export default class StartNode extends Node{`
 }
 ```
 这里的getSvgIcon方法为Node类中提供的方法，这里必须要将其覆盖，返回一个svg格式图片地址，svg格式图片可以用AI之类图像软件制作。这里返回的svg就是这个start节点上显示的图标，之所以返回svg格式图片，是因为svg支持缩放而不失真。
+
+在实际使用当中，类似这里的StartNode因为是用户自己实现，所以还应该包含一些用户自定义的方法。
