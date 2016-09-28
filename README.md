@@ -55,7 +55,7 @@ export default class StartTool extends Tool{
 getType方法返回当前节点类型；getIcon方法用于返回当前节点在工具栏上的图标（这里用到的是字体图标）；newNode方法表示在工具栏中点击这个节点工具，在绘图区点击时将创建的节点对象，这里就返回一个新的StartNode对象；getConfigs方法用于配置当前节点在一个图中可存在的数据（single为true表示只能有一个，否则可以有多个），in属性表示当前节点进入的连线可以有多少，为0表示不能有进入的连线，out表示出去的连线有多少。
 
 最后的getPropertiesProducer方法用于返回当前节点在被添加到绘图区时，被用户选中后出现的属性内容，这里要求返回一个function，在这个function中返回具体的编辑属性的内容，需要注意的是，getPropertiesProducer返回返回的function中的this会被替换成当前选中的节点对象，而非function自身，这样我们就可以很容易的修改选中对象的属性，下面的getPropertiesProducer代码摘自urule中规则流的ActionTool中，可以看到其修改属性的方法：
-```
+```javascript
 getPropertiesProducer(){
     const _this=this;
     return function (){
@@ -74,9 +74,8 @@ getPropertiesProducer(){
     }
 }
 ```
-
 定义好Tool类之后，接下来就可以将其添加到设计器，同时渲染输出到页面，如下面的代码所示：
-```
+```javascript
 import {FlowDesigner} from 'flowdesigner';
 import StartTool from './StartTool.js';
 import EndTool from './EndTool.js';
@@ -93,7 +92,7 @@ designer.buildDesigner();
 上述这些工作完成之后，我们可以看到如在线DEMO：http://58.246.62.194:16808/flow-designer-demo/ 所示效果。
 
 实际使用中，应该还会向工具栏添加一些其它的辅助按钮，比如保存之类，这些可调用设计器的addButton方法实现，如下面的代码所示：
-```
+```javascript
 designer.addButton({
     icon:'<i class="rf rf-save"></i>',
     tip:'保存',
