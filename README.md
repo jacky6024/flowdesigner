@@ -92,4 +92,24 @@ designer.buildDesigner();
 
 上述这些工作完成之后，我们可以看到如在线DEMO：http://58.246.62.194:16808/flow-designer-demo/ 所示效果。
 
-实际使用中，应该还会向工具栏添加一些其它的辅助按钮，比如保存之类，
+实际使用中，应该还会向工具栏添加一些其它的辅助按钮，比如保存之类，这些可调用设计器的addButton方法实现，如下面的代码所示：
+```
+designer.addButton({
+    icon:'<i class="rf rf-save"></i>',
+    tip:'保存',
+    click:function(){
+        event.eventEmitter.emit(event.SHOW_LOADING,"数据保存中");
+        const content=designer.toXML();
+        if(!content){
+            event.eventEmitter.emit(event.HIDE_LOADING);
+            return;
+        }
+        let postData={content,file,newVersion:false};
+        const url=window._server+'/common/saveFile';
+        ajaxSave(url,postData,function () {
+            event.eventEmitter.emit(event.HIDE_LOADING);
+            MsgBox.alert('保存成功');
+        });
+    }
+});
+```
