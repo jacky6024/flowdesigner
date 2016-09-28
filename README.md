@@ -62,4 +62,4 @@ designer.buildDesigner();
 ```
 在上面的代码当中，const designer=new FlowDesigner('container');表示创建一个设计器对象，它需要一个容器ID作用参数，接下来调用它的addTool方法将我们自定义的Tool添加到设计器中，最后调用设计器的buildDesigner方法渲染设计器。
 
-上述这些工作完成之后，我们可以看到如在线DEMO：http://58.246.62.194:16808/flow-designer-demo/所示效果。
+上述这些工作完成之后，我们可以看到如在线DEMO：http://58.246.62.194:16808/flow-designer-demo/ 所示效果。
