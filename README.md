@@ -113,3 +113,5 @@ designer.addButton({
     }
 });
 ```
+更为复杂的用法，可参考urule-sample中关于规则流的实现，urule-sample地址如下：http://58.246.62.194:16808/urule-sample/
+
