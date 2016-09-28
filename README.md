@@ -116,6 +116,6 @@ designer.addButton({
 
 URule规则引擎控制台前端项目源码地址：https://github.com/jacky6024/urule-console-js
 
-URule规则引擎决策流源码地址：https://github.com/jacky6024/urule-console-js/tree/master/src/flow
+URule规则引擎决策流源码地址：https://github.com/jacky6024/urule-console-js/tree/master/src/flow 这里的决策流就是基于FlowDesigner项目实现。
 
 
