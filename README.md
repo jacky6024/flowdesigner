@@ -17,5 +17,32 @@ export default class StartNode extends Node{`
 }
 ```
 这里的getSvgIcon方法为Node类中提供的方法，这里必须要将其覆盖，返回一个svg格式图片地址，svg格式图片可以用AI之类图像软件制作。这里返回的svg就是这个start节点上显示的图标，之所以返回svg格式图片，是因为svg支持缩放而不失真。
-
 在实际使用当中，类似这里的StartNode因为是用户自己实现，所以还应该包含一些用户自定义的方法。
+有了定义好的节点类之后，接下来，我们还需要实现一个对应的工具类，将节点类和设计器关联起来，其代码如下：
+```
+import {Tool} from 'flowdesigner';
+import StartNode from './StartNode.js';
+
+export default class StartTool extends Tool{
+    getType(){
+        return "start";
+    }
+    getIcon(){
+        return `<i class="flow flow-start" style="color:#737383"></i>`
+    }
+    newNode(){
+        return new StartNode();
+    }
+    getConfigs(){
+        return {
+            in:0,
+            out:1,
+            single:true
+        };
+    }
+}
+
+```
+在上面的代码当中，StartTool必须要扩展自Tool类，其中的四个方法都是Tool类中提供的要求子类必须要覆盖的方法。
+
+getType方法返回当前节点类型；getIcon方法用于返回当前节点在工具栏上的图标（这里用到的是字体图标）；newNode方法表示在工具栏中点击这个节点工具，在绘图区点击时将创建的节点对象，这里就返回一个新的StartNode对象；最后的getConfigs方法用于配置当前节点在一个图中可存在的数据（single为true表示只能有一个，否则可以有多个），in属性表示当前节点进入的连线可以有多少，为0表示不能有进入的连线，out表示出去的连线有多少。
