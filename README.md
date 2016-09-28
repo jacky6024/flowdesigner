@@ -46,3 +46,18 @@ export default class StartTool extends Tool{
 在上面的代码当中，StartTool必须要扩展自Tool类，其中的四个方法都是Tool类中提供的要求子类必须要覆盖的方法。
 
 getType方法返回当前节点类型；getIcon方法用于返回当前节点在工具栏上的图标（这里用到的是字体图标）；newNode方法表示在工具栏中点击这个节点工具，在绘图区点击时将创建的节点对象，这里就返回一个新的StartNode对象；最后的getConfigs方法用于配置当前节点在一个图中可存在的数据（single为true表示只能有一个，否则可以有多个），in属性表示当前节点进入的连线可以有多少，为0表示不能有进入的连线，out表示出去的连线有多少。
+
+定义好Tool类之后，接下来就可以将其添加到设计器，同时渲染输出到页面，如下面的代码所示：
+```
+import {FlowDesigner} from 'flowdesigner';
+import StartTool from './StartTool.js';
+import EndTool from './EndTool.js';
+import TaskTool from './TaskTool.js';
+
+const designer=new FlowDesigner('container');
+designer.addTool(new StartTool());
+designer.addTool(new EndTool());
+designer.addTool(new TaskTool());
+designer.buildDesigner();
+```
+在上面的代码当中，const designer=new FlowDesigner('container');表示创建一个设计器对象，它需要一个容器ID作用参数，接下来调用它的addTool方法将我们自定义的Tool添加到设计器中，最后调用设计器的buildDesigner方法渲染设计器。
