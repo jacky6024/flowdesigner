@@ -5,4 +5,15 @@ FlowDesigner 是一套可以在网页中使用的基础JS绘图库，采用ES6�
 在一个已有的基于npm的js项目当中，执行命令
 ### npm install flowdesigner
 即可将最新版本的flowdesigner安装到本地的JS项目当中。
+# 使用
+使用设计器，第一步是需要添加节点，比如下面的代码当中就可以添加一个Start节点,
+### /**
+ * Created by Jacky.gao on 2016/7/12.
+ */
+import {Node} from 'flowdesigner';
+export default class StartNode extends Node{
+    getSvgIcon(){
+        return 'start.svg';
+    }
+}
 
