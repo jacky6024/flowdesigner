@@ -16,7 +16,7 @@ export default class StartNode extends Node{`
     }
 }
 ```
-这里的getSvgIcon方法为Node类中提供的方法，这里必须要将其覆盖，返回一个svg格式图片地址，svg格式图片可以用AI之类图像软件制作。这里返回的svg就是这个start节点上显示的图标，之所以返回svg格式图片，是因为svg支持缩放而不失真。
+这里的getSvgIcon方法为Node类中提供的方法，必须要将其覆盖，该方法需要返回一个svg格式图片地址（svg格式图片可以用AI之类图像软件制作）。返回的svg就是这个start节点上显示的图标，之所以返回svg格式图片，是因为svg支持缩放而不失真。
 在实际使用当中，类似这里的StartNode因为是用户自己实现，所以还应该包含一些用户自定义的方法。
 有了定义好的节点类之后，接下来，我们还需要实现一个对应的工具类，将节点类和设计器关联起来，其代码如下：
 ```javascript
@@ -52,9 +52,9 @@ export default class StartTool extends Tool{
 ```
 在上面的代码当中，StartTool必须要扩展自Tool类，其中的四个方法都是Tool类中提供的要求子类必须要覆盖的方法。
 
-getType方法返回当前节点类型；getIcon方法用于返回当前节点在工具栏上的图标（这里用到的是字体图标）；newNode方法表示在工具栏中点击这个节点工具，在绘图区点击时将创建的节点对象，这里就返回一个新的StartNode对象；getConfigs方法用于配置当前节点在一个图中可存在的数据（single为true表示只能有一个，否则可以有多个），in属性表示当前节点进入的连线可以有多少，为0表示不能有进入的连线，out表示出去的连线有多少。
+getType方法返回当前节点类型；getIcon方法用于返回当前节点在工具栏上的图标（这里用到的是字体图标）；newNode方法表示在工具栏中点击这个节点工具、再到绘图区点击鼠标时将创建的节点对象，这里就返回一个新的StartNode对象；getConfigs方法用于返回当前节点在图中的配置信息：single为true表示只能有一个，否则可以有多个；in属性表示当前节点进入的连线可以有多少，为0表示不能有进入的连线；out表示出去的连线有多少。
 
-最后的getPropertiesProducer方法用于返回当前节点在被添加到绘图区时，被用户选中后出现的属性内容，这里要求返回一个function，在这个function中返回具体的编辑属性的内容，需要注意的是，getPropertiesProducer返回返回的function中的this会被替换成当前选中的节点对象，而非function自身，这样我们就可以很容易的修改选中对象的属性，下面的getPropertiesProducer代码摘自urule中规则流的ActionTool中，可以看到其修改属性的方法：
+最后的getPropertiesProducer方法用于返回当前节点在绘图区被用户选中后出现的属性内容，这里要求返回一个function，在这个function中返回当前选中节点具体的属性内容。需要注意的是，getPropertiesProducer返回的function中的this会被替换成当前选中的节点对象，而非function自身，这样我们就可以很容易的修改选中对象的属性，下面的getPropertiesProducer代码摘自urule中规则流的ActionTool中，可以看到其修改属性的方法：
 ```javascript
 getPropertiesProducer(){
     const _this=this;
