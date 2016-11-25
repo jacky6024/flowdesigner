@@ -2,325 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6989e42-e1ad-4f34-8e88-3e9b04601ea5" name="Default" comment="new update in HOME">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/node_modules/source-map/node_modules/amdefine/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/node_modules/source-map/node_modules/amdefine/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/node_modules/source-map/node_modules/amdefine/amdefine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/node_modules/source-map/node_modules/amdefine/intercept.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/node_modules/source-map/node_modules/amdefine/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/apply.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/construct.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/define-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/define-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/delete-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/delete-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/enumerate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/get-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/get-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/get-own-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/get-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/get-own-property-descriptor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/get-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/get.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/has-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/has-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/has.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/is-extensible.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/own-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/prevent-extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/set-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-runtime/core-js/reflect/set.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-traverse/node_modules/invariant/node_modules/.bin/loose-envify" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-block-scoping/node_modules/babel-traverse/node_modules/invariant/node_modules/.bin/loose-envify.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-classes/node_modules/babel-traverse/node_modules/invariant/node_modules/.bin/loose-envify" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-classes/node_modules/babel-traverse/node_modules/invariant/node_modules/.bin/loose-envify.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/apply.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/construct.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/define-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/define-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/delete-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/delete-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/enumerate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/get-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/get-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/get-own-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/get-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/get-own-property-descriptor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/get-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/get.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/has-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/has-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/has.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/is-extensible.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/own-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/prevent-extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/set-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-computed-properties/node_modules/babel-runtime/core-js/reflect/set.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-helper-function-name/node_modules/babel-traverse/node_modules/.bin/babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-helper-function-name/node_modules/babel-traverse/node_modules/.bin/babylon.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/apply.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/construct.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/define-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/define-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/delete-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/delete-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/enumerate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/get-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/get-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/get-own-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/get-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/get-own-property-descriptor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/get-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/get.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/has-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/has-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/has.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/is-extensible.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/own-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/prevent-extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/set-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-function-name/node_modules/babel-runtime/core-js/reflect/set.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/apply.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/construct.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/define-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/define-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/delete-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/delete-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/enumerate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/get-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/get-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/get-own-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/get-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/get-own-property-descriptor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/get-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/get.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/has-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/has-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/has.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/is-extensible.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/own-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/prevent-extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/set-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs/node_modules/babel-runtime/core-js/reflect/set.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-object-super/node_modules/babel-helper-replace-supers/node_modules/babel-traverse/node_modules/.bin/babylon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-object-super/node_modules/babel-helper-replace-supers/node_modules/babel-traverse/node_modules/.bin/babylon.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-parameters/node_modules/babel-traverse/node_modules/invariant/node_modules/.bin/loose-envify" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-parameters/node_modules/babel-traverse/node_modules/invariant/node_modules/.bin/loose-envify.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/apply.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/construct.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/define-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/define-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/delete-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/delete-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/enumerate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/get-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/get-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/get-own-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/get-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/get-own-property-descriptor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/get-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/get.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/has-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/has.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/is-extensible.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/set-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-runtime/core-js/reflect/set.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/debug/node_modules/ms/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/debug/node_modules/ms/History.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/debug/node_modules/ms/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/debug/node_modules/ms/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/debug/node_modules/ms/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/debug/node_modules/ms/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/cli.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/loose-envify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-sticky-regex/node_modules/babel-types/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/replace.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/apply.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/define-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/define-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/delete-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/delete-property.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/enumerate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/get-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/get-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/get-own-metadata-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/get-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/get-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/get.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/has-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/has-own-metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/has.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/is-extensible.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/metadata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/own-keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/prevent-extensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-es2015-unicode-regex/node_modules/babel-runtime/core-js/reflect/set-prototype-of.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/ansi-styles/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/ansi-styles/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/ansi-styles/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/ansi-styles/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/escape-string-regexp/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/escape-string-regexp/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/escape-string-regexp/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/escape-string-regexp/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/supports-color/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/supports-color/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/supports-color/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-code-frame/node_modules/chalk/node_modules/supports-color/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-generator/node_modules/detect-indent/cli.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-generator/node_modules/detect-indent/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-generator/node_modules/detect-indent/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-generator/node_modules/detect-indent/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-generator/node_modules/detect-indent/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/build/Gruntfile.ls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/build/build.ls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/build/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/build/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/client/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/client/core.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/client/library.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/client/library.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/client/shim.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/core-js/es5/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/.bin/user-home" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/.bin/user-home.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/os-tmpdir/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/os-tmpdir/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/os-tmpdir/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/os-tmpdir/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/user-home/cli.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/user-home/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/user-home/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/user-home/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/home-or-tmp/node_modules/user-home/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/bin/cmd.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/bin/usage.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/examples/pow.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/chmod.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/clobber.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/mkdirp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/opts_fs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/opts_fs_sync.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/perm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/perm_sync.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/race.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/rel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/return.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/return_sync.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/root.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/sync.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/umask.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/mkdirp/test/umask_sync.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/amd-test/browser-source-map-support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/amd-test/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/amd-test/require.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/amd-test/script.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/amd-test/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/amd-test/script.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/browser-test/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/browser-test/script.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/browser-test/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/browser-test/script.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/header-test/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/header-test/script.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/header-test/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/header-test/script.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/babel-register/node_modules/source-map-support/header-test/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/block-comment-following-array-element.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/block-comment-following-top-level-value.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/block-comment-in-string.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/block-comment-preceding-top-level-value.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/block-comment-with-asterisks.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/inline-comment-following-array-element.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/inline-comment-following-top-level-value.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/inline-comment-in-string.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/inline-comment-preceding-top-level-value.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/top-level-block-comment.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/top-level-inline-comment.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/comments/unterminated-block-comment.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/misc/empty.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/misc/npm-package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/misc/npm-package.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/misc/readme-example.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/misc/valid-whitespace.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/new-lines/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/new-lines/.gitattributes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/new-lines/comment-cr.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/new-lines/comment-crlf.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/new-lines/comment-lf.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/new-lines/escaped-cr.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/new-lines/escaped-crlf.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/json5/test/parse-cases/new-lines/escaped-lf.json5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/README.markdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/example/map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-core/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/test/map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/ansi-styles/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/ansi-styles/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/ansi-styles/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/ansi-styles/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/escape-string-regexp/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/escape-string-regexp/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/escape-string-regexp/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/escape-string-regexp/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/has-ansi/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/strip-ansi/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/supports-color/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/supports-color/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/supports-color/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/babel-code-frame/node_modules/chalk/node_modules/supports-color/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/node_modules/js-tokens/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/node_modules/js-tokens/changelog.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/node_modules/js-tokens/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/node_modules/js-tokens/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/babel-preset-es2015/node_modules/babel-plugin-transform-regenerator/node_modules/babel-traverse/node_modules/invariant/node_modules/loose-envify/node_modules/js-tokens/readme.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FlowDesigner.js" afterPath="$PROJECT_DIR$/src/FlowDesigner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.npmignore" afterPath="$PROJECT_DIR$/.npmignore" />
     </list>
     <ignored path="flowdesigner.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -341,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name=".npmignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.npmignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.083333336">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -390,7 +73,6 @@
         <option value="$PROJECT_DIR$/src/tools/StartNodeTool.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/.npmignore" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/sample/StartTool.js" />
         <option value="$PROJECT_DIR$/sample/EndTool.js" />
@@ -419,6 +101,7 @@
         <option value="$PROJECT_DIR$/css/flowdesigner.css" />
         <option value="$PROJECT_DIR$/src/FlowDesigner.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.npmignore" />
       </list>
     </option>
   </component>
@@ -461,20 +144,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="flowdesigner">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -519,6 +188,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="sample" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="flowdesigner">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -816,26 +499,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18268216" sideWeight="0.48756218" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18268216" sideWeight="0.48756218" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17880794" sideWeight="0.50790304" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19852164" sideWeight="0.5124378" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17721519" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49472016" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23360184" sideWeight="0.49209693" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23306544" sideWeight="0.49209693" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49472016" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1063,13 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.npmignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10964912">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/FlowDesigner.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29239765">
@@ -1178,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2618296">
           <caret line="34" column="44" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1186,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5772871">
           <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,7 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3868472">
           <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4731861">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1258,6 +930,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.083333336">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.npmignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

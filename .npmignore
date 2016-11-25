@@ -1,5 +1,2 @@
-sample
-src
-server.js
-webpack.config.js
-node_modules
+/node_modules
+/.idea
