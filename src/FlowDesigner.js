@@ -33,8 +33,8 @@ export default class FlowDesigner{
         this.canvasContainer.append(propertyPanel);
 
         const propertyTab=$(`<ul class="nav nav-tabs">
-            <li class="active">
-                <a href="${propContainerId}" data-toggle="tab">属性面板</a>
+            <li class="active" style="margin-bottom: auto">
+                <a href="${propContainerId}" data-toggle="tab">属性面板 <i class="glyphicon glyphicon-circle-arrow-down" style="color:#9E9E9E;font-size: 16px;vertical-align: middle;cursor: pointer" title="双击显示/隐藏属性面板" id="__prop_panel_tool__"></i></a>
             </li>
         </ul>`);
         propertyPanel.append(propertyTab);
@@ -43,10 +43,22 @@ export default class FlowDesigner{
         });
         this.propContainer=$(`<div id="${propContainerId}"/>`);
         const tabContent=$(`<div class="tab-content" style="min-height: 300px;padding:10px"/>`);
-        tabContent.append('<div class="text-danger" style="margin-bottom:8px">属性值修改后，请回车以确认</div>');
+        tabContent.append('<div class="text-info" style="margin-bottom:8px">属性值修改后，请回车以确认</div>');
         tabContent.append(this.propContainer);
         propertyPanel.append(tabContent);
         propertyPanel.draggable();
+        const propPanelTool=$("#__prop_panel_tool__");
+        propPanelTool.click(function(){
+            tabContent.toggle();
+            const display=tabContent.css("display");
+            if(!display || display==='none'){
+                propPanelTool.removeClass("glyphicon-circle-arrow-down");
+                propPanelTool.addClass("glyphicon-circle-arrow-left");
+            }else{
+                propPanelTool.removeClass("glyphicon-circle-arrow-left");
+                propPanelTool.addClass("glyphicon-circle-arrow-down");
+            }
+        });
         this._bindSnapToEvent();
         this._bindShortcutKey();
     }
