@@ -22,7 +22,7 @@ export default class FlowDesigner{
         container.append(this.nodeToolbar);
 
         this.canvasContainer=$(`<div class="fd-canvas-container"></div>`);
-        this.canvasContainer.css('height',$(window).height()-160);
+        this.canvasContainer.css('height',$(window).height()-150);
         container.append(this.canvasContainer);
         this.context=new Context(this.canvasContainer);
         this.canvas=new Canvas(this.context);
@@ -42,7 +42,7 @@ export default class FlowDesigner{
            e.preventDefault();
         });
         this.propContainer=$(`<div id="${propContainerId}"/>`);
-        const tabContent=$(`<div class="tab-content" style="min-height: 400px;padding:10px"/>`);
+        const tabContent=$(`<div class="tab-content" style="min-height: 300px;padding:10px"/>`);
         tabContent.append('<div class="text-info" style="margin-bottom:8px">属性值修改后，请回车以确认</div>');
         tabContent.append(this.propContainer);
         propertyPanel.append(tabContent);
