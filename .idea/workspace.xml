@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d6989e42-e1ad-4f34-8e88-3e9b04601ea5" name="Default" comment="new update in HOME">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.npmignore" afterPath="$PROJECT_DIR$/.npmignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FlowDesigner.js" afterPath="$PROJECT_DIR$/src/FlowDesigner.js" />
     </list>
     <ignored path="flowdesigner.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,12 +25,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".npmignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.npmignore">
+      <file leaf-file-name="FlowDesigner.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/FlowDesigner.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.36949685">
+              <caret line="44" column="73" selection-start-line="44" selection-start-column="73" selection-end-line="44" selection-end-column="73" />
+              <folding>
+                <marker date="1480400307951" expanded="true" signature="1360:1700" placeholder="..." />
+                <marker date="1480400307951" expanded="false" signature="1400:1419" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="1420:1686" placeholder="..." />
+                <marker date="1480400307951" expanded="false" signature="1546:1614" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="1960:1990" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="2054:2071" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="5156:5183" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="5203:5253" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="5484:5511" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="5523:5604" placeholder="..." />
+                <marker date="1480400307951" expanded="false" signature="5568:5581" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="5950:5977" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="5997:6076" placeholder="..." />
+                <marker date="1480400307951" expanded="false" signature="6040:6053" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="6428:6455" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="6467:6546" placeholder="..." />
+                <marker date="1480400307951" expanded="false" signature="6510:6523" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="6922:6949" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="6961:7040" placeholder="..." />
+                <marker date="1480400307951" expanded="false" signature="7004:7017" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="7417:7444" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="7458:7539" placeholder="..." />
+                <marker date="1480400307951" expanded="false" signature="7503:7516" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="7937:7964" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="7980:8061" placeholder="..." />
+                <marker date="1480400307951" expanded="false" signature="8025:8038" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="8463:8490" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="8504:8570" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="8972:8999" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="9013:9079" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="9478:9505" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="9531:9593" placeholder="..." />
+                <marker date="1480400307951" expanded="false" signature="10104:10131" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="10158:10281" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="14139:14274" placeholder="..." />
+                <marker date="1480400307951" expanded="true" signature="16580:16595" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,9 +137,9 @@
         <option value="$PROJECT_DIR$/src/Node.js" />
         <option value="$PROJECT_DIR$/src/MsgBox.js" />
         <option value="$PROJECT_DIR$/css/flowdesigner.css" />
+        <option value="$PROJECT_DIR$/.npmignore" />
         <option value="$PROJECT_DIR$/src/FlowDesigner.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/.npmignore" />
       </list>
     </option>
   </component>
@@ -143,7 +181,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="flowdesigner">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -162,50 +213,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowdesigner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowdesigner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowdesigner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flowdesigner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="flowdesigner">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -499,7 +509,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18268216" sideWeight="0.48756218" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -831,22 +841,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="-0.96">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
       <provider editor-type-id="MarkdownFxPreviewEditor">
         <state />
       </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5072464">
           <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="-0.96">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -878,66 +886,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FlowDesigner.js">
+    <entry file="file://$PROJECT_DIR$/.npmignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.329653">
-          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
-          <folding>
-            <marker date="1480043955138" expanded="true" signature="1360:1700" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="1392:1686" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="1400:1419" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="1420:1686" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="1546:1560" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="1546:1599" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="1546:1614" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="1960:1990" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="2054:2071" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="5156:5183" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="5203:5253" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="5484:5511" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="5523:5604" placeholder="..." />
-            <marker date="1480043955138" expanded="false" signature="5568:5581" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="5950:5977" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="5997:6076" placeholder="..." />
-            <marker date="1480043955138" expanded="false" signature="6040:6053" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="6428:6455" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="6467:6546" placeholder="..." />
-            <marker date="1480043955138" expanded="false" signature="6510:6523" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="6922:6949" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="6961:7040" placeholder="..." />
-            <marker date="1480043955138" expanded="false" signature="7004:7017" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="7417:7444" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="7458:7539" placeholder="..." />
-            <marker date="1480043955138" expanded="false" signature="7503:7516" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="7937:7964" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="7980:8061" placeholder="..." />
-            <marker date="1480043955138" expanded="false" signature="8025:8038" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="8463:8490" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="8504:8570" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="8972:8999" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="9013:9079" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="9478:9505" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="9531:9593" placeholder="..." />
-            <marker date="1480043955138" expanded="false" signature="10104:10131" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="10158:10281" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="14139:14274" placeholder="..." />
-            <marker date="1480043955138" expanded="true" signature="16580:16595" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.083333336">
+        <state vertical-scroll-proportion="0.08305648">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.npmignore">
+    <entry file="file://$PROJECT_DIR$/src/FlowDesigner.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.36949685">
+          <caret line="44" column="73" selection-start-line="44" selection-start-column="73" selection-end-line="44" selection-end-column="73" />
+          <folding>
+            <marker date="1480400307951" expanded="true" signature="1360:1700" placeholder="..." />
+            <marker date="1480400307951" expanded="false" signature="1400:1419" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="1420:1686" placeholder="..." />
+            <marker date="1480400307951" expanded="false" signature="1546:1614" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="1960:1990" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="2054:2071" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="5156:5183" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="5203:5253" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="5484:5511" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="5523:5604" placeholder="..." />
+            <marker date="1480400307951" expanded="false" signature="5568:5581" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="5950:5977" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="5997:6076" placeholder="..." />
+            <marker date="1480400307951" expanded="false" signature="6040:6053" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="6428:6455" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="6467:6546" placeholder="..." />
+            <marker date="1480400307951" expanded="false" signature="6510:6523" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="6922:6949" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="6961:7040" placeholder="..." />
+            <marker date="1480400307951" expanded="false" signature="7004:7017" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="7417:7444" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="7458:7539" placeholder="..." />
+            <marker date="1480400307951" expanded="false" signature="7503:7516" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="7937:7964" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="7980:8061" placeholder="..." />
+            <marker date="1480400307951" expanded="false" signature="8025:8038" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="8463:8490" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="8504:8570" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="8972:8999" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="9013:9079" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="9478:9505" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="9531:9593" placeholder="..." />
+            <marker date="1480400307951" expanded="false" signature="10104:10131" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="10158:10281" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="14139:14274" placeholder="..." />
+            <marker date="1480400307951" expanded="true" signature="16580:16595" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

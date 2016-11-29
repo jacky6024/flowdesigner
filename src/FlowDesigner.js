@@ -34,7 +34,7 @@ export default class FlowDesigner{
 
         const propertyTab=$(`<ul class="nav nav-tabs">
             <li class="active" style="margin-bottom: auto">
-                <a href="${propContainerId}" data-toggle="tab">属性面板 <i class="glyphicon glyphicon-circle-arrow-down" style="color:#9E9E9E;font-size: 16px;vertical-align: middle;cursor: pointer" title="双击显示/隐藏属性面板" id="__prop_panel_tool__"></i></a>
+                <a href="${propContainerId}" data-toggle="tab">属性面板 <i class="glyphicon glyphicon-circle-arrow-down" style="color:#9E9E9E;font-size: 16px;vertical-align: middle;cursor: pointer" title="点击显示/隐藏属性面板" id="__prop_panel_tool__"></i></a>
             </li>
         </ul>`);
         propertyPanel.append(propertyTab);
@@ -42,7 +42,7 @@ export default class FlowDesigner{
            e.preventDefault();
         });
         this.propContainer=$(`<div id="${propContainerId}"/>`);
-        const tabContent=$(`<div class="tab-content" style="min-height: 300px;padding:10px"/>`);
+        const tabContent=$(`<div class="tab-content" style="min-height: 400px;padding:10px"/>`);
         tabContent.append('<div class="text-info" style="margin-bottom:8px">属性值修改后，请回车以确认</div>');
         tabContent.append(this.propContainer);
         propertyPanel.append(tabContent);
