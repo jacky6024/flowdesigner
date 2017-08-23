@@ -24,13 +24,41 @@ export default class DragPoint{
             x=start[1]+dx/2,y=start[2]+dy/2;
         }
 
-        this.rect=this.context.paper.rect(x-3,y-3,5,5);
+        this.rect=this.context.paper.rect(x-4,y-4,6,6);
         this.rect.attr({'stroke':'#FF5722','fill':'#FF5722'});
         this.rect.mouseover(function (e) {
             this.attr('cursor', 'move');
         });
         this.rect.mouseout(function (e) {
             this.attr('cursor', 'default');
+        });
+        this.rect.dblclick(function(e){
+            let pi=_this.path.attr("path");
+            if(segmentIndex===0 || (segmentIndex % 2)===0){
+                _this.remove();
+                return;
+            }
+            let index=1;
+            if(segmentIndex>1){
+                index=(segmentIndex+1)/2;
+            }
+            pi.splice(index,1);
+            if(pi.length===2){
+                pi=_this.connection._buildStraightLinePathInfo();
+            }else{
+                let ps=pi[1];
+                let startDot=_this.connection._buildFromFigureIntersetion({x:ps[1],y:ps[2]},true);
+                let startPoint=pi[0];
+                startPoint[1]=startDot.x;
+                startPoint[2]=startDot.y;
+                let pe=pi[pi.length-2];
+                let endDot=_this.connection._buildToFigureIntersetion({x:pe[1],y:pe[2]},true);
+                let endPoint=pi[pi.length-1];
+                endPoint[1]=endDot.x;
+                endPoint[2]=endDot.y;
+            }
+            _this.path.attr('path',pi);
+            _this.remove();
         });
         var dragMove = function(dx, dy) {
             if(_this.context.snapto){
@@ -107,7 +135,6 @@ export default class DragPoint{
                     conn._buildText();
                 }
             });
-            _this.controller.remove();
         };
         this.rect.drag(dragMove,dragStart,dragEnd);
     }

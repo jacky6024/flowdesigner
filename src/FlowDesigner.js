@@ -18,11 +18,15 @@ export default class FlowDesigner{
         const container=$('#'+containerId);
         this.toolbar=$(`<div class="btn-group fd-toolbar" data-toggle="buttons"></div>`);
         container.append(this.toolbar);
+
+        this.toolbarInfo=$(`<span style="float: right;font-size: 12px;margin-top: 5px;color: #747474;margin-right: 5px"></span>`);
+        this.toolbar.append(this.toolbarInfo);
+
         this.nodeToolbar=$(`<div class="btn-group fd-node-toolbar" data-toggle="buttons"></div>`);
         container.append(this.nodeToolbar);
 
         this.canvasContainer=$(`<div class="fd-canvas-container"></div>`);
-        this.canvasContainer.css('height',$(window).height()-150);
+        this.canvasContainer.css('height',$(window).height()-100);
         container.append(this.canvasContainer);
         this.context=new Context(this.canvasContainer);
         this.canvas=new Canvas(this.context);
@@ -33,7 +37,7 @@ export default class FlowDesigner{
         this.canvasContainer.append(propertyPanel);
 
         const propertyTab=$(`<ul class="nav nav-tabs">
-            <li class="active" style="margin-bottom: auto">
+            <li class="active">
                 <a href="${propContainerId}" data-toggle="tab">属性面板 <i class="glyphicon glyphicon-circle-arrow-down" style="color:#9E9E9E;font-size: 16px;vertical-align: middle;cursor: pointer" title="点击显示/隐藏属性面板" id="__prop_panel_tool__"></i></a>
             </li>
         </ul>`);
@@ -43,7 +47,7 @@ export default class FlowDesigner{
         });
         this.propContainer=$(`<div id="${propContainerId}"/>`);
         const tabContent=$(`<div class="tab-content" style="min-height: 300px;padding:10px"/>`);
-        tabContent.append('<div class="text-info" style="margin-bottom:8px">属性值修改后，请回车以确认</div>');
+        tabContent.append('<div class="text-info" style="margin-bottom:8px;color: #999999;">属性值修改后，请回车以确认</div>');
         tabContent.append(this.propContainer);
         propertyPanel.append(tabContent);
         propertyPanel.draggable();
@@ -61,6 +65,10 @@ export default class FlowDesigner{
         });
         this._bindSnapToEvent();
         this._bindShortcutKey();
+    }
+
+    setInfo(info){
+        this.toolbarInfo.html(info);
     }
 
     addNode(json){
@@ -257,8 +265,9 @@ export default class FlowDesigner{
         event.eventEmitter.on(event.OBJECT_SELECTED,target=>{
             this.propContainer.empty();
             if(target instanceof Node){
-                const nameGroup=$(`<div class="form-group"><label>节点名称</label></div>`);
-                const nameText=$(`<input type="text" class="form-control" value="${target.text.attr('text')}">`);
+                const name=target.name || target.text.attr('text');
+                const nameGroup=$(`<div class="form-group"><label>节点名称：</label></div>`);
+                const nameText=$(`<input type="text" class="form-control" style="width: 305px;display: inline-block" value="${name}">`);
                 nameGroup.append(nameText);
                 this.propContainer.append(nameGroup);
                 nameText.change(function(e){
@@ -291,8 +300,8 @@ export default class FlowDesigner{
                 });
                 this.propContainer.append(target._tool.getPropertiesProducer().call(target));
             }else if(target instanceof Connection){
-                const nameGroup=$(`<div class="form-group"><label>连线名称</label></div>`);
-                const nameText=$(`<input type="text" class="form-control" value="${target.name ? target.name : ''}">`);
+                const nameGroup=$(`<div class="form-group"><label>连线名称：</label></div>`);
+                const nameText=$(`<input type="text" class="form-control" style="width: 305px;display: inline-block" value="${target.name ? target.name : ''}">`);
                 nameGroup.append(nameText);
                 this.propContainer.append(nameGroup);
                 nameText.change(function(e){
@@ -324,8 +333,8 @@ export default class FlowDesigner{
                     });
                 });
 
-                const lineTypeGroup=$(`<div class="form-group"><label>线型</label></div>`);
-                const typeSelect=$(`<select class="form-control">
+                const lineTypeGroup=$(`<div class="form-group"><label>线型：</label></div>`);
+                const typeSelect=$(`<select class="form-control"  style="width: 335px;display: inline-block">
                     <option value="line">直线</option>
                     <option value="curve">直角曲线</option>
                 </select>`);
