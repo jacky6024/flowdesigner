@@ -142,8 +142,11 @@ export default class Connection{
     fromJSON(json){
         this.pathInfo=json.path;
         this.g=json.g;
-        this.type=json.type || 'line';
         this.name=json.name;
+        for(const prop in json){
+            this[prop]=json[prop];
+        }
+        this.type=json.type || 'line';
         if(json.uuid){
             this.uuid=json.uuid;
         }
@@ -151,16 +154,18 @@ export default class Connection{
     }
 
     toJSON(){
-        const json = {
-            path: this.path.attr('path'),
-            name:this.name,
-            uuid:this.uuid,
-            type:this.type,
-            to:this.to.name,
-            toUUID:this.to.uuid,
-            from:this.from.name,
-            fromUUID:this.from.uuid
-        };
+        const json={};
+        for(const prop in this){
+            json[prop]=this[prop];
+        }
+        json.path=this.path.attr('path');
+        json.name=this.name;
+        json.uuid=this.uuid;
+        json.type=this.type;
+        json.to=this.to.name;
+        json.toUUID=this.to.uuid;
+        json.from=this.from.name;
+        json.fromUUID=this.from.uuid;
         return json;
     }
 
