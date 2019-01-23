@@ -62,6 +62,9 @@ export default class DragEndpoint{
                 }
             }
             _this.controller.remove();
+            if(window._setDirty){
+                window._setDirty();
+            }
         };
         this.startRect.drag(dragMove,dragStart,dragEnd);
         this.startRect.onDragOver(function (e) {
@@ -119,6 +122,9 @@ export default class DragEndpoint{
                 }
             }
             _this.controller.remove();
+            if(window._setDirty){
+                window._setDirty();
+            }
         };
         this.endRect.drag(dragMove,dragStart,dragEnd);
         this.endRect.onDragOver(function (e) {
@@ -129,5 +135,8 @@ export default class DragEndpoint{
     remove(){
         this.startRect.remove();
         this.endRect.remove();
+        if(window._setDirty){
+            window._setDirty();
+        }
     }
 }

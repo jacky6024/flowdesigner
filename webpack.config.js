@@ -1,31 +1,43 @@
 /**
  * Created by Jacky.gao on 2016/6/28
  */
+const path=require('path');
 module.exports={
-    entry:{
+    mode:'development',
+    entry: {
         test:'./sample/test.js'
     },
     output:{
-        path:'./sample',
+        path:path.resolve('./sample'),
         filename:'[name].bundle.js'
     },
+    
     module:{
-        loaders:[
+        rules:[
             {
-                test:/\.js$/,
-                exclude:/node_modules/,
-                loader: 'babel',
-                query: {
-                    presets: ['es2015']
+                test: /\.(jsx|js)?$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
+                options:{
+                    "presets": [
+                        "env"
+                    ]
                 }
             },
             {
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
+                test:/\.css$/,
+                use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
             },
             {
                 test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
-                loader: 'url-loader?limit=1000000&name=[name]-[hash].[ext]'
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000000
+                        }
+                    }
+                ]
             }
         ]
     }

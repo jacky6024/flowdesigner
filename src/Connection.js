@@ -74,6 +74,9 @@ export default class Connection{
         if(this.text){
             this.text.remove();
         }
+        if(window._setDirty){
+            window._setDirty();
+        }
     }
 
     select(){
@@ -144,6 +147,9 @@ export default class Connection{
         this.g=json.g;
         this.name=json.name;
         for(const prop in json){
+            if(!prop || prop==='to' || prop==='toNode'){
+                continue;
+            }
             this[prop]=json[prop];
         }
         this.type=json.type || 'line';
@@ -156,6 +162,9 @@ export default class Connection{
     toJSON(){
         const json={};
         for(const prop in this){
+            if(!prop || prop==='to' || prop==='toNode'){
+                continue;
+            }
             json[prop]=this[prop];
         }
         json.path=this.path.attr('path');

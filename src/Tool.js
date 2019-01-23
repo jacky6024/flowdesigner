@@ -37,8 +37,15 @@ export default class Tool{
         if(!name){
             name=this._buildNodeName();
         }
-        node._createFigure(this.context,{x,y},name);
-        return node;
+        const result=node._createFigure(this.context,{x,y},name);
+        if(result){
+            if(window._setDirty){
+                window._setDirty();
+            }
+            return node;
+        }else{
+            return null;
+        }
     }
     _buildNodeName(){
         let name=this.getType()+this.count++,exist=false;

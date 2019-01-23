@@ -123,7 +123,7 @@ export default class Node{
             }
             if(exist){
                 MsgBox.alert('当前节点只允许创建一个.');
-                return null;
+                return false;
             }
         }
         this.uuid=context.nextUUID();
@@ -144,6 +144,7 @@ export default class Node{
             e.preventDefault();
         });
         this._initFigure();
+        return true;
     }
 
     moveTo(centerX,centerY){
@@ -167,6 +168,9 @@ export default class Node{
         const iconX=x-w/2,iconY=y-h/2+20,iconW=this.icon.attr('width'),iconH=this.icon.attr('height');
         this.icon.attr({x:iconX+iconW/2,y:iconY+iconH/2});
         this._resetConnections();
+        if(window._setDirty){
+            window._setDirty();
+        }
     }
 
     changeSize(w,h){
@@ -177,6 +181,9 @@ export default class Node{
         const iconW=w,iconH=h-30;
         this.icon.attr({width:iconW,height:iconH});
         this._resetConnections();
+        if(window._setDirty){
+            window._setDirty();
+        }
     }
 
     _initFigure(){
@@ -449,7 +456,10 @@ export default class Node{
                         node._resetConnections();
                     }
                 }
-            })
+            });
+            if(window._setDirty){
+                window._setDirty();
+            }
         };
         this.rect.drag(dragMove, dragStart, dragEnd);
         this.icon.drag(dragMove, dragStart, dragEnd);
@@ -466,6 +476,9 @@ export default class Node{
         this.text.remove();
         this.icon.remove();
         this.rect.remove();
+        if(window._setDirty){
+            window._setDirty();
+        }
     }
 
     _recordRectPosition(){

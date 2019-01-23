@@ -26,6 +26,9 @@ export default class DragController{
         });
         this.points.splice(0,this.points.length);
         this.dragEndpoint.remove();
+        if(window._setDirty){
+            window._setDirty();
+        }
     }
     removeOthers(currentPoint){
         this.points.forEach((point,index)=>{
@@ -35,6 +38,9 @@ export default class DragController{
         });
         if(this.dragEndpoint!==currentPoint){
             this.dragEndpoint.remove();
+        }
+        if(window._setDirty){
+            window._setDirty();
         }
     }
 }

@@ -59,6 +59,9 @@ export default class DragPoint{
             }
             _this.path.attr('path',pi);
             _this.remove();
+            if(window._setDirty){
+                window._setDirty();
+            }
         });
         var dragMove = function(dx, dy) {
             if(_this.context.snapto){
@@ -137,8 +140,14 @@ export default class DragPoint{
             });
         };
         this.rect.drag(dragMove,dragStart,dragEnd);
+        if(window._setDirty){
+            window._setDirty();
+        }
     }
     remove(){
         this.rect.remove();
+        if(window._setDirty){
+            window._setDirty();
+        }
     }
 }

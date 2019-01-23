@@ -88,6 +88,9 @@ export default class FlowDesigner{
             this.context.resizePaper(maxWidth+50,maxHeight+50);
             const newNode=tool._newNodeInstance(x,y,name);
             newNode.initFromJson(json);
+            if(window._setDirty){
+                window._setDirty();
+            }
         }else{
             MsgBox.alert(`添加的节点类型${json.type}不存在.`);
             return;
@@ -181,6 +184,9 @@ export default class FlowDesigner{
             context.undoManager.undo();
             _this.nodeToolbar.children('label').removeClass('active');
             context.currentTool=context.selectTool;
+            if(window._setDirty){
+                window._setDirty();
+            }
         });
         const redoTool=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0" title="撤消">
             <i class="fd fd-redo" style="color:#737383"></i>
@@ -191,6 +197,9 @@ export default class FlowDesigner{
             context.undoManager.redo();
             _this.nodeToolbar.children('label').removeClass('active');
             context.currentTool=context.selectTool;
+            if(window._setDirty){
+                window._setDirty();
+            }
         });
 
         const snapTool=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0" title="网格吸附">
@@ -212,6 +221,9 @@ export default class FlowDesigner{
             event.eventEmitter.emit(event.REMOVE_CLICKED);
             _this.nodeToolbar.children('label').removeClass('active');
             context.currentTool=context.selectTool;
+            if(window._setDirty){
+                window._setDirty();
+            }
         });
         const alignCenter=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0" title="竖直居中">
              <i class="fd fd-align-center"></i>
@@ -222,6 +234,9 @@ export default class FlowDesigner{
             event.eventEmitter.emit(event.ALIGN_CENTER);
             _this.nodeToolbar.children('label').removeClass('active');
             context.currentTool=context.selectTool;
+            if(window._setDirty){
+                window._setDirty();
+            }
         });
         const alignMiddle=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0" title="水平居中">
              <i class="fd fd-align-middle"></i>
@@ -232,6 +247,9 @@ export default class FlowDesigner{
             event.eventEmitter.emit(event.ALIGN_MIDDLE);
             _this.nodeToolbar.children('label').removeClass('active');
             context.currentTool=context.selectTool;
+            if(window._setDirty){
+                window._setDirty();
+            }
         });
         const sameSize=$(`<button type="button" class="btn btn-default" style="border:none;border-radius:0" title="将选中的所有组件的尺寸设置为相同">
              <i class="fd fd-samesize"></i>
@@ -242,6 +260,9 @@ export default class FlowDesigner{
             event.eventEmitter.emit(event.UNIFY_SIZE);
             _this.nodeToolbar.children('label').removeClass('active');
             context.currentTool=context.selectTool;
+            if(window._setDirty){
+                window._setDirty();
+            }
         });
         this._buildNodeTools();
     }
@@ -283,6 +304,9 @@ export default class FlowDesigner{
                         MsgBox.alert('节点名已存在!');
                         return;
                     }
+                    if(window._setDirty){
+                        window._setDirty();
+                    }
                     target.name=newName;
                     target.text.attr('text',$(this).val());
                     _this.context.addRedoUndo({
@@ -316,6 +340,9 @@ export default class FlowDesigner{
                     if(nameUnique){
                         MsgBox.alert(`连线名已存在`);
                         return;
+                    }
+                    if(window._setDirty){
+                        window._setDirty();
                     }
                     target.name=newName;
                     target._buildText();
@@ -356,7 +383,10 @@ export default class FlowDesigner{
                             conn.type=oldType;
                             conn.updatePath();
                         }
-                    })
+                    });
+                    if(window._setDirty){
+                        window._setDirty();
+                    }
                 });
                 this.propContainer.append(lineTypeGroup);
                 this.propContainer.append(target.from._tool.getConnectionPropertiesProducer().call(target));

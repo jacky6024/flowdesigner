@@ -124,6 +124,9 @@ export default class Canvas{
                 })
             }
             context.endSelect();
+            if(window._setDirty){
+                window._setDirty();
+            }
         }
     }
 };
